@@ -13,24 +13,24 @@
 <span class="sourceLineNo">005</span> * **********************************************************************<a name="line.5"></a>
 <span class="sourceLineNo">006</span> * ORGANIZATION  :  Pi4J<a name="line.6"></a>
 <span class="sourceLineNo">007</span> * PROJECT       :  Pi4J :: Java Library (Core)<a name="line.7"></a>
-<span class="sourceLineNo">008</span> * FILENAME      :  GpioPinImpl.java  <a name="line.8"></a>
-<span class="sourceLineNo">009</span> * <a name="line.9"></a>
-<span class="sourceLineNo">010</span> * This file is part of the Pi4J project. More information about <a name="line.10"></a>
+<span class="sourceLineNo">008</span> * FILENAME      :  GpioPinImpl.java<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * This file is part of the Pi4J project. More information about<a name="line.10"></a>
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2015 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
 <span class="sourceLineNo">018</span> * published by the Free Software Foundation, either version 3 of the<a name="line.18"></a>
 <span class="sourceLineNo">019</span> * License, or (at your option) any later version.<a name="line.19"></a>
-<span class="sourceLineNo">020</span> * <a name="line.20"></a>
+<span class="sourceLineNo">020</span> *<a name="line.20"></a>
 <span class="sourceLineNo">021</span> * This program is distributed in the hope that it will be useful,<a name="line.21"></a>
 <span class="sourceLineNo">022</span> * but WITHOUT ANY WARRANTY; without even the implied warranty of<a name="line.22"></a>
 <span class="sourceLineNo">023</span> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<a name="line.23"></a>
 <span class="sourceLineNo">024</span> * GNU General Lesser Public License for more details.<a name="line.24"></a>
-<span class="sourceLineNo">025</span> * <a name="line.25"></a>
+<span class="sourceLineNo">025</span> *<a name="line.25"></a>
 <span class="sourceLineNo">026</span> * You should have received a copy of the GNU General Lesser Public<a name="line.26"></a>
 <span class="sourceLineNo">027</span> * License along with this program.  If not, see<a name="line.27"></a>
 <span class="sourceLineNo">028</span> * &lt;http://www.gnu.org/licenses/lgpl-3.0.html&gt;.<a name="line.28"></a>
@@ -47,17 +47,17 @@
 <span class="sourceLineNo">039</span>import java.util.concurrent.ConcurrentHashMap;<a name="line.39"></a>
 <span class="sourceLineNo">040</span>import java.util.concurrent.Future;<a name="line.40"></a>
 <span class="sourceLineNo">041</span><a name="line.41"></a>
-<span class="sourceLineNo">042</span>public class GpioPinImpl implements GpioPin, <a name="line.42"></a>
-<span class="sourceLineNo">043</span>                                    GpioPinDigitalInput, <a name="line.43"></a>
-<span class="sourceLineNo">044</span>                                    GpioPinDigitalOutput, <a name="line.44"></a>
+<span class="sourceLineNo">042</span>public class GpioPinImpl implements GpioPin,<a name="line.42"></a>
+<span class="sourceLineNo">043</span>                                    GpioPinDigitalInput,<a name="line.43"></a>
+<span class="sourceLineNo">044</span>                                    GpioPinDigitalOutput,<a name="line.44"></a>
 <span class="sourceLineNo">045</span>                                    GpioPinDigitalMultipurpose,<a name="line.45"></a>
-<span class="sourceLineNo">046</span>                                    GpioPinAnalogInput, <a name="line.46"></a>
+<span class="sourceLineNo">046</span>                                    GpioPinAnalogInput,<a name="line.46"></a>
 <span class="sourceLineNo">047</span>                                    GpioPinAnalogOutput,<a name="line.47"></a>
 <span class="sourceLineNo">048</span>                                    GpioPinPwmOutput,<a name="line.48"></a>
 <span class="sourceLineNo">049</span>                                    GpioPinInput,<a name="line.49"></a>
 <span class="sourceLineNo">050</span>                                    GpioPinOutput<a name="line.50"></a>
 <span class="sourceLineNo">051</span>{<a name="line.51"></a>
-<span class="sourceLineNo">052</span> <a name="line.52"></a>
+<span class="sourceLineNo">052</span><a name="line.52"></a>
 <span class="sourceLineNo">053</span>    @SuppressWarnings("unused")<a name="line.53"></a>
 <span class="sourceLineNo">054</span>    private String name = null;<a name="line.54"></a>
 <span class="sourceLineNo">055</span>    private Object tag = null;<a name="line.55"></a>
@@ -87,7 +87,7 @@
 <span class="sourceLineNo">079</span>    public GpioProvider getProvider() {<a name="line.79"></a>
 <span class="sourceLineNo">080</span>        return this.provider;<a name="line.80"></a>
 <span class="sourceLineNo">081</span>    }<a name="line.81"></a>
-<span class="sourceLineNo">082</span>    <a name="line.82"></a>
+<span class="sourceLineNo">082</span><a name="line.82"></a>
 <span class="sourceLineNo">083</span>    @Override<a name="line.83"></a>
 <span class="sourceLineNo">084</span>    public void setName(String name) {<a name="line.84"></a>
 <span class="sourceLineNo">085</span>        this.name = name;<a name="line.85"></a>
@@ -100,7 +100,7 @@
 <span class="sourceLineNo">092</span>        }<a name="line.92"></a>
 <span class="sourceLineNo">093</span>        return name;<a name="line.93"></a>
 <span class="sourceLineNo">094</span>    }<a name="line.94"></a>
-<span class="sourceLineNo">095</span>    <a name="line.95"></a>
+<span class="sourceLineNo">095</span><a name="line.95"></a>
 <span class="sourceLineNo">096</span>    @Override<a name="line.96"></a>
 <span class="sourceLineNo">097</span>    public void setTag(Object tag) {<a name="line.97"></a>
 <span class="sourceLineNo">098</span>        this.tag = tag;<a name="line.98"></a>
@@ -136,7 +136,7 @@
 <span class="sourceLineNo">128</span>    public String getProperty(String key) {<a name="line.128"></a>
 <span class="sourceLineNo">129</span>        return getProperty(key, null);<a name="line.129"></a>
 <span class="sourceLineNo">130</span>    }<a name="line.130"></a>
-<span class="sourceLineNo">131</span>    <a name="line.131"></a>
+<span class="sourceLineNo">131</span><a name="line.131"></a>
 <span class="sourceLineNo">132</span>    @Override<a name="line.132"></a>
 <span class="sourceLineNo">133</span>    public Map&lt;String, String&gt; getProperties() {<a name="line.133"></a>
 <span class="sourceLineNo">134</span>        return properties;<a name="line.134"></a>
@@ -247,7 +247,7 @@
 <span class="sourceLineNo">239</span>        // NOTE: a value of 0 milliseconds will stop the blinking<a name="line.239"></a>
 <span class="sourceLineNo">240</span>        return GpioScheduledExecutorImpl.blink(this, delay, duration, blinkState);<a name="line.240"></a>
 <span class="sourceLineNo">241</span>    }<a name="line.241"></a>
-<span class="sourceLineNo">242</span>    <a name="line.242"></a>
+<span class="sourceLineNo">242</span><a name="line.242"></a>
 <span class="sourceLineNo">243</span>    @Override<a name="line.243"></a>
 <span class="sourceLineNo">244</span>    public Future&lt;?&gt; pulse(long duration) {<a name="line.244"></a>
 <span class="sourceLineNo">245</span>        return pulse(duration, false);<a name="line.245"></a>
@@ -285,19 +285,19 @@
 <span class="sourceLineNo">277</span><a name="line.277"></a>
 <span class="sourceLineNo">278</span>    @Override<a name="line.278"></a>
 <span class="sourceLineNo">279</span>    public Future&lt;?&gt; pulse(long duration, PinState pulseState, boolean blocking, Callable&lt;Void&gt; callback) {<a name="line.279"></a>
-<span class="sourceLineNo">280</span>        <a name="line.280"></a>
+<span class="sourceLineNo">280</span><a name="line.280"></a>
 <span class="sourceLineNo">281</span>        // validate duration argument<a name="line.281"></a>
 <span class="sourceLineNo">282</span>        if(duration &lt;= 0)<a name="line.282"></a>
 <span class="sourceLineNo">283</span>            throw new IllegalArgumentException("Pulse duration must be greater than 0 milliseconds.");<a name="line.283"></a>
-<span class="sourceLineNo">284</span>        <a name="line.284"></a>
-<span class="sourceLineNo">285</span>        // if this is a blocking pulse, then execute the pulse <a name="line.285"></a>
-<span class="sourceLineNo">286</span>        // and sleep the caller's thread to block the operation <a name="line.286"></a>
+<span class="sourceLineNo">284</span><a name="line.284"></a>
+<span class="sourceLineNo">285</span>        // if this is a blocking pulse, then execute the pulse<a name="line.285"></a>
+<span class="sourceLineNo">286</span>        // and sleep the caller's thread to block the operation<a name="line.286"></a>
 <span class="sourceLineNo">287</span>        // until the pulse is complete<a name="line.287"></a>
 <span class="sourceLineNo">288</span>        if(blocking) {<a name="line.288"></a>
 <span class="sourceLineNo">289</span>            // start the pulse state<a name="line.289"></a>
 <span class="sourceLineNo">290</span>            setState(pulseState);<a name="line.290"></a>
-<span class="sourceLineNo">291</span>            <a name="line.291"></a>
-<span class="sourceLineNo">292</span>            // block the current thread for the pulse duration <a name="line.292"></a>
+<span class="sourceLineNo">291</span><a name="line.291"></a>
+<span class="sourceLineNo">292</span>            // block the current thread for the pulse duration<a name="line.292"></a>
 <span class="sourceLineNo">293</span>            try {<a name="line.293"></a>
 <span class="sourceLineNo">294</span>                Thread.sleep(duration);<a name="line.294"></a>
 <span class="sourceLineNo">295</span>            }<a name="line.295"></a>
@@ -316,18 +316,18 @@
 <span class="sourceLineNo">308</span>                    e.printStackTrace();<a name="line.308"></a>
 <span class="sourceLineNo">309</span>                }<a name="line.309"></a>
 <span class="sourceLineNo">310</span>            }<a name="line.310"></a>
-<span class="sourceLineNo">311</span>            <a name="line.311"></a>
+<span class="sourceLineNo">311</span><a name="line.311"></a>
 <span class="sourceLineNo">312</span>            // we are done; no future is returned for blocking pulses<a name="line.312"></a>
 <span class="sourceLineNo">313</span>            return null;<a name="line.313"></a>
 <span class="sourceLineNo">314</span>        }<a name="line.314"></a>
-<span class="sourceLineNo">315</span>        else {            <a name="line.315"></a>
-<span class="sourceLineNo">316</span>            // if this is not a blocking call, then setup the pulse <a name="line.316"></a>
+<span class="sourceLineNo">315</span>        else {<a name="line.315"></a>
+<span class="sourceLineNo">316</span>            // if this is not a blocking call, then setup the pulse<a name="line.316"></a>
 <span class="sourceLineNo">317</span>            // instruction to be completed in a background worker<a name="line.317"></a>
-<span class="sourceLineNo">318</span>            // thread pool using a scheduled executor <a name="line.318"></a>
+<span class="sourceLineNo">318</span>            // thread pool using a scheduled executor<a name="line.318"></a>
 <span class="sourceLineNo">319</span>            return GpioScheduledExecutorImpl.pulse(this, duration, pulseState, callback);<a name="line.319"></a>
 <span class="sourceLineNo">320</span>        }<a name="line.320"></a>
 <span class="sourceLineNo">321</span>    }<a name="line.321"></a>
-<span class="sourceLineNo">322</span>    <a name="line.322"></a>
+<span class="sourceLineNo">322</span><a name="line.322"></a>
 <span class="sourceLineNo">323</span>    @Override<a name="line.323"></a>
 <span class="sourceLineNo">324</span>    public void setState(PinState state) {<a name="line.324"></a>
 <span class="sourceLineNo">325</span>        provider.setState(pin, state);<a name="line.325"></a>
@@ -387,201 +387,209 @@
 <span class="sourceLineNo">379</span>    public void setValue(double value) {<a name="line.379"></a>
 <span class="sourceLineNo">380</span>        provider.setValue(pin, value);<a name="line.380"></a>
 <span class="sourceLineNo">381</span>    }<a name="line.381"></a>
-<span class="sourceLineNo">382</span>    <a name="line.382"></a>
+<span class="sourceLineNo">382</span><a name="line.382"></a>
 <span class="sourceLineNo">383</span>    @Override<a name="line.383"></a>
-<span class="sourceLineNo">384</span>    public double getValue() {<a name="line.384"></a>
-<span class="sourceLineNo">385</span>        return provider.getValue(pin);<a name="line.385"></a>
-<span class="sourceLineNo">386</span>    }    <a name="line.386"></a>
-<span class="sourceLineNo">387</span><a name="line.387"></a>
-<span class="sourceLineNo">388</span>    @Override<a name="line.388"></a>
-<span class="sourceLineNo">389</span>    public void setPwm(int value) {<a name="line.389"></a>
-<span class="sourceLineNo">390</span>        provider.setPwm(pin, value);<a name="line.390"></a>
-<span class="sourceLineNo">391</span>    }<a name="line.391"></a>
-<span class="sourceLineNo">392</span>    <a name="line.392"></a>
-<span class="sourceLineNo">393</span>    @Override<a name="line.393"></a>
-<span class="sourceLineNo">394</span>    public int getPwm() {<a name="line.394"></a>
-<span class="sourceLineNo">395</span>        return provider.getPwm(pin);<a name="line.395"></a>
-<span class="sourceLineNo">396</span>    }  <a name="line.396"></a>
-<span class="sourceLineNo">397</span>    <a name="line.397"></a>
-<span class="sourceLineNo">398</span>    private synchronized void updateInterruptListener() {<a name="line.398"></a>
-<span class="sourceLineNo">399</span>        if (listeners.size() &gt; 0 || triggers.size() &gt; 0) {<a name="line.399"></a>
-<span class="sourceLineNo">400</span>            if (monitor == null) { <a name="line.400"></a>
-<span class="sourceLineNo">401</span>                // create new monitor and register for event callbacks<a name="line.401"></a>
-<span class="sourceLineNo">402</span>                monitor = new GpioEventMonitorExecutorImpl(this);<a name="line.402"></a>
-<span class="sourceLineNo">403</span>                provider.addListener(pin, monitor);<a name="line.403"></a>
-<span class="sourceLineNo">404</span>            }<a name="line.404"></a>
-<span class="sourceLineNo">405</span>        } else {<a name="line.405"></a>
-<span class="sourceLineNo">406</span>            if (monitor != null) {<a name="line.406"></a>
-<span class="sourceLineNo">407</span>                // remove monitor and unregister for event callbacks<a name="line.407"></a>
-<span class="sourceLineNo">408</span>                provider.removeListener(pin, monitor);<a name="line.408"></a>
-<span class="sourceLineNo">409</span><a name="line.409"></a>
-<span class="sourceLineNo">410</span>                // destroy monitor instance<a name="line.410"></a>
-<span class="sourceLineNo">411</span>                monitor = null;<a name="line.411"></a>
+<span class="sourceLineNo">384</span>    public void setValue(Number value) { setValue(value.doubleValue()); }<a name="line.384"></a>
+<span class="sourceLineNo">385</span><a name="line.385"></a>
+<span class="sourceLineNo">386</span>    @Override<a name="line.386"></a>
+<span class="sourceLineNo">387</span>    public double getValue() {<a name="line.387"></a>
+<span class="sourceLineNo">388</span>        return provider.getValue(pin);<a name="line.388"></a>
+<span class="sourceLineNo">389</span>    }<a name="line.389"></a>
+<span class="sourceLineNo">390</span><a name="line.390"></a>
+<span class="sourceLineNo">391</span>    @Override<a name="line.391"></a>
+<span class="sourceLineNo">392</span>    public void setPwm(int value) {<a name="line.392"></a>
+<span class="sourceLineNo">393</span>        provider.setPwm(pin, value);<a name="line.393"></a>
+<span class="sourceLineNo">394</span>    }<a name="line.394"></a>
+<span class="sourceLineNo">395</span><a name="line.395"></a>
+<span class="sourceLineNo">396</span>    @Override<a name="line.396"></a>
+<span class="sourceLineNo">397</span>    public void setPwmRange(int range) {<a name="line.397"></a>
+<span class="sourceLineNo">398</span>        provider.setPwmRange(pin, range);<a name="line.398"></a>
+<span class="sourceLineNo">399</span>    }<a name="line.399"></a>
+<span class="sourceLineNo">400</span><a name="line.400"></a>
+<span class="sourceLineNo">401</span>    @Override<a name="line.401"></a>
+<span class="sourceLineNo">402</span>    public int getPwm() {<a name="line.402"></a>
+<span class="sourceLineNo">403</span>        return provider.getPwm(pin);<a name="line.403"></a>
+<span class="sourceLineNo">404</span>    }<a name="line.404"></a>
+<span class="sourceLineNo">405</span><a name="line.405"></a>
+<span class="sourceLineNo">406</span>    private synchronized void updateInterruptListener() {<a name="line.406"></a>
+<span class="sourceLineNo">407</span>        if (listeners.size() &gt; 0 || triggers.size() &gt; 0) {<a name="line.407"></a>
+<span class="sourceLineNo">408</span>            if (monitor == null) {<a name="line.408"></a>
+<span class="sourceLineNo">409</span>                // create new monitor and register for event callbacks<a name="line.409"></a>
+<span class="sourceLineNo">410</span>                monitor = new GpioEventMonitorExecutorImpl(this);<a name="line.410"></a>
+<span class="sourceLineNo">411</span>                provider.addListener(pin, monitor);<a name="line.411"></a>
 <span class="sourceLineNo">412</span>            }<a name="line.412"></a>
-<span class="sourceLineNo">413</span>        }<a name="line.413"></a>
-<span class="sourceLineNo">414</span>    }<a name="line.414"></a>
-<span class="sourceLineNo">415</span><a name="line.415"></a>
-<span class="sourceLineNo">416</span>    /**<a name="line.416"></a>
-<span class="sourceLineNo">417</span>     * <a name="line.417"></a>
-<span class="sourceLineNo">418</span>     * @param listener gpio pin listener interface<a name="line.418"></a>
-<span class="sourceLineNo">419</span>     */<a name="line.419"></a>
-<span class="sourceLineNo">420</span>    public synchronized void addListener(GpioPinListener... listener) {<a name="line.420"></a>
-<span class="sourceLineNo">421</span>        if (listener == null || listener.length == 0) {<a name="line.421"></a>
-<span class="sourceLineNo">422</span>            throw new IllegalArgumentException("Missing listener argument.");<a name="line.422"></a>
-<span class="sourceLineNo">423</span>        }<a name="line.423"></a>
-<span class="sourceLineNo">424</span>        Collections.addAll(listeners, listener);<a name="line.424"></a>
-<span class="sourceLineNo">425</span>        updateInterruptListener();<a name="line.425"></a>
-<span class="sourceLineNo">426</span>    }<a name="line.426"></a>
-<span class="sourceLineNo">427</span><a name="line.427"></a>
-<span class="sourceLineNo">428</span>    public synchronized void addListener(List&lt;? extends GpioPinListener&gt; listeners) {<a name="line.428"></a>
-<span class="sourceLineNo">429</span>        for (GpioPinListener listener : listeners) {<a name="line.429"></a>
-<span class="sourceLineNo">430</span>            addListener(listener);<a name="line.430"></a>
+<span class="sourceLineNo">413</span>        } else {<a name="line.413"></a>
+<span class="sourceLineNo">414</span>            if (monitor != null) {<a name="line.414"></a>
+<span class="sourceLineNo">415</span>                // remove monitor and unregister for event callbacks<a name="line.415"></a>
+<span class="sourceLineNo">416</span>                provider.removeListener(pin, monitor);<a name="line.416"></a>
+<span class="sourceLineNo">417</span><a name="line.417"></a>
+<span class="sourceLineNo">418</span>                // destroy monitor instance<a name="line.418"></a>
+<span class="sourceLineNo">419</span>                monitor = null;<a name="line.419"></a>
+<span class="sourceLineNo">420</span>            }<a name="line.420"></a>
+<span class="sourceLineNo">421</span>        }<a name="line.421"></a>
+<span class="sourceLineNo">422</span>    }<a name="line.422"></a>
+<span class="sourceLineNo">423</span><a name="line.423"></a>
+<span class="sourceLineNo">424</span>    /**<a name="line.424"></a>
+<span class="sourceLineNo">425</span>     *<a name="line.425"></a>
+<span class="sourceLineNo">426</span>     * @param listener gpio pin listener interface<a name="line.426"></a>
+<span class="sourceLineNo">427</span>     */<a name="line.427"></a>
+<span class="sourceLineNo">428</span>    public synchronized void addListener(GpioPinListener... listener) {<a name="line.428"></a>
+<span class="sourceLineNo">429</span>        if (listener == null || listener.length == 0) {<a name="line.429"></a>
+<span class="sourceLineNo">430</span>            throw new IllegalArgumentException("Missing listener argument.");<a name="line.430"></a>
 <span class="sourceLineNo">431</span>        }<a name="line.431"></a>
-<span class="sourceLineNo">432</span>    }<a name="line.432"></a>
-<span class="sourceLineNo">433</span><a name="line.433"></a>
-<span class="sourceLineNo">434</span>    /**<a name="line.434"></a>
-<span class="sourceLineNo">435</span>     * <a name="line.435"></a>
-<span class="sourceLineNo">436</span>     */<a name="line.436"></a>
-<span class="sourceLineNo">437</span>    public synchronized Collection&lt;GpioPinListener&gt; getListeners() {<a name="line.437"></a>
-<span class="sourceLineNo">438</span>        return listeners;<a name="line.438"></a>
-<span class="sourceLineNo">439</span>    }<a name="line.439"></a>
-<span class="sourceLineNo">440</span><a name="line.440"></a>
-<span class="sourceLineNo">441</span>    @Override<a name="line.441"></a>
-<span class="sourceLineNo">442</span>    public boolean hasListener(GpioPinListener... listener) {<a name="line.442"></a>
-<span class="sourceLineNo">443</span>        if (listener == null || listener.length == 0) {<a name="line.443"></a>
-<span class="sourceLineNo">444</span>            throw new IllegalArgumentException("Missing listener argument.");<a name="line.444"></a>
-<span class="sourceLineNo">445</span>        }<a name="line.445"></a>
-<span class="sourceLineNo">446</span>        for (GpioPinListener lsnr : listener) {<a name="line.446"></a>
-<span class="sourceLineNo">447</span>            if (!listeners.contains(lsnr)) {<a name="line.447"></a>
-<span class="sourceLineNo">448</span>                return false;<a name="line.448"></a>
-<span class="sourceLineNo">449</span>            }<a name="line.449"></a>
-<span class="sourceLineNo">450</span>        }<a name="line.450"></a>
-<span class="sourceLineNo">451</span><a name="line.451"></a>
-<span class="sourceLineNo">452</span>        return true;<a name="line.452"></a>
-<span class="sourceLineNo">453</span>    }<a name="line.453"></a>
-<span class="sourceLineNo">454</span>    <a name="line.454"></a>
-<span class="sourceLineNo">455</span>    public synchronized void removeListener(GpioPinListener... listener) {<a name="line.455"></a>
-<span class="sourceLineNo">456</span>        if (listener == null || listener.length == 0) {<a name="line.456"></a>
-<span class="sourceLineNo">457</span>            throw new IllegalArgumentException("Missing listener argument.");<a name="line.457"></a>
+<span class="sourceLineNo">432</span>        Collections.addAll(listeners, listener);<a name="line.432"></a>
+<span class="sourceLineNo">433</span>        updateInterruptListener();<a name="line.433"></a>
+<span class="sourceLineNo">434</span>    }<a name="line.434"></a>
+<span class="sourceLineNo">435</span><a name="line.435"></a>
+<span class="sourceLineNo">436</span>    public synchronized void addListener(List&lt;? extends GpioPinListener&gt; listeners) {<a name="line.436"></a>
+<span class="sourceLineNo">437</span>        for (GpioPinListener listener : listeners) {<a name="line.437"></a>
+<span class="sourceLineNo">438</span>            addListener(listener);<a name="line.438"></a>
+<span class="sourceLineNo">439</span>        }<a name="line.439"></a>
+<span class="sourceLineNo">440</span>    }<a name="line.440"></a>
+<span class="sourceLineNo">441</span><a name="line.441"></a>
+<span class="sourceLineNo">442</span>    /**<a name="line.442"></a>
+<span class="sourceLineNo">443</span>     *<a name="line.443"></a>
+<span class="sourceLineNo">444</span>     */<a name="line.444"></a>
+<span class="sourceLineNo">445</span>    public synchronized Collection&lt;GpioPinListener&gt; getListeners() {<a name="line.445"></a>
+<span class="sourceLineNo">446</span>        return listeners;<a name="line.446"></a>
+<span class="sourceLineNo">447</span>    }<a name="line.447"></a>
+<span class="sourceLineNo">448</span><a name="line.448"></a>
+<span class="sourceLineNo">449</span>    @Override<a name="line.449"></a>
+<span class="sourceLineNo">450</span>    public boolean hasListener(GpioPinListener... listener) {<a name="line.450"></a>
+<span class="sourceLineNo">451</span>        if (listener == null || listener.length == 0) {<a name="line.451"></a>
+<span class="sourceLineNo">452</span>            throw new IllegalArgumentException("Missing listener argument.");<a name="line.452"></a>
+<span class="sourceLineNo">453</span>        }<a name="line.453"></a>
+<span class="sourceLineNo">454</span>        for (GpioPinListener lsnr : listener) {<a name="line.454"></a>
+<span class="sourceLineNo">455</span>            if (!listeners.contains(lsnr)) {<a name="line.455"></a>
+<span class="sourceLineNo">456</span>                return false;<a name="line.456"></a>
+<span class="sourceLineNo">457</span>            }<a name="line.457"></a>
 <span class="sourceLineNo">458</span>        }<a name="line.458"></a>
-<span class="sourceLineNo">459</span>        for (GpioPinListener lsnr : listener) {<a name="line.459"></a>
-<span class="sourceLineNo">460</span>            listeners.remove(lsnr);<a name="line.460"></a>
-<span class="sourceLineNo">461</span>        }<a name="line.461"></a>
-<span class="sourceLineNo">462</span>        <a name="line.462"></a>
-<span class="sourceLineNo">463</span>        updateInterruptListener();<a name="line.463"></a>
-<span class="sourceLineNo">464</span>    }<a name="line.464"></a>
-<span class="sourceLineNo">465</span><a name="line.465"></a>
-<span class="sourceLineNo">466</span>    public synchronized void removeListener(List&lt;? extends GpioPinListener&gt; listeners) {<a name="line.466"></a>
-<span class="sourceLineNo">467</span>        for (GpioPinListener listener : listeners) {<a name="line.467"></a>
-<span class="sourceLineNo">468</span>            removeListener(listener);<a name="line.468"></a>
+<span class="sourceLineNo">459</span><a name="line.459"></a>
+<span class="sourceLineNo">460</span>        return true;<a name="line.460"></a>
+<span class="sourceLineNo">461</span>    }<a name="line.461"></a>
+<span class="sourceLineNo">462</span><a name="line.462"></a>
+<span class="sourceLineNo">463</span>    public synchronized void removeListener(GpioPinListener... listener) {<a name="line.463"></a>
+<span class="sourceLineNo">464</span>        if (listener == null || listener.length == 0) {<a name="line.464"></a>
+<span class="sourceLineNo">465</span>            throw new IllegalArgumentException("Missing listener argument.");<a name="line.465"></a>
+<span class="sourceLineNo">466</span>        }<a name="line.466"></a>
+<span class="sourceLineNo">467</span>        for (GpioPinListener lsnr : listener) {<a name="line.467"></a>
+<span class="sourceLineNo">468</span>            listeners.remove(lsnr);<a name="line.468"></a>
 <span class="sourceLineNo">469</span>        }<a name="line.469"></a>
-<span class="sourceLineNo">470</span>    }<a name="line.470"></a>
-<span class="sourceLineNo">471</span>    <a name="line.471"></a>
-<span class="sourceLineNo">472</span>    public synchronized void removeAllListeners() {<a name="line.472"></a>
-<span class="sourceLineNo">473</span>        List&lt;GpioPinListener&gt; listeners_copy = new ArrayList&lt;&gt;(listeners);<a name="line.473"></a>
-<span class="sourceLineNo">474</span>        for (int index = (listeners_copy.size()-1); index &gt;= 0; index --) {<a name="line.474"></a>
-<span class="sourceLineNo">475</span>            GpioPinListener listener = listeners_copy.get(index);<a name="line.475"></a>
+<span class="sourceLineNo">470</span><a name="line.470"></a>
+<span class="sourceLineNo">471</span>        updateInterruptListener();<a name="line.471"></a>
+<span class="sourceLineNo">472</span>    }<a name="line.472"></a>
+<span class="sourceLineNo">473</span><a name="line.473"></a>
+<span class="sourceLineNo">474</span>    public synchronized void removeListener(List&lt;? extends GpioPinListener&gt; listeners) {<a name="line.474"></a>
+<span class="sourceLineNo">475</span>        for (GpioPinListener listener : listeners) {<a name="line.475"></a>
 <span class="sourceLineNo">476</span>            removeListener(listener);<a name="line.476"></a>
 <span class="sourceLineNo">477</span>        }<a name="line.477"></a>
 <span class="sourceLineNo">478</span>    }<a name="line.478"></a>
 <span class="sourceLineNo">479</span><a name="line.479"></a>
-<span class="sourceLineNo">480</span>    /**<a name="line.480"></a>
-<span class="sourceLineNo">481</span>     * <a name="line.481"></a>
-<span class="sourceLineNo">482</span>     */<a name="line.482"></a>
-<span class="sourceLineNo">483</span>    public synchronized Collection&lt;GpioTrigger&gt; getTriggers() {<a name="line.483"></a>
-<span class="sourceLineNo">484</span>        return triggers;<a name="line.484"></a>
-<span class="sourceLineNo">485</span>    }<a name="line.485"></a>
-<span class="sourceLineNo">486</span><a name="line.486"></a>
-<span class="sourceLineNo">487</span>    public synchronized void addTrigger(GpioTrigger... trigger) {<a name="line.487"></a>
-<span class="sourceLineNo">488</span>        if (trigger == null || trigger.length == 0) {<a name="line.488"></a>
-<span class="sourceLineNo">489</span>            throw new IllegalArgumentException("Missing trigger argument.");<a name="line.489"></a>
-<span class="sourceLineNo">490</span>        }<a name="line.490"></a>
-<span class="sourceLineNo">491</span>        Collections.addAll(triggers, trigger);<a name="line.491"></a>
-<span class="sourceLineNo">492</span>        updateInterruptListener();<a name="line.492"></a>
+<span class="sourceLineNo">480</span>    public synchronized void removeAllListeners() {<a name="line.480"></a>
+<span class="sourceLineNo">481</span>        List&lt;GpioPinListener&gt; listeners_copy = new ArrayList&lt;&gt;(listeners);<a name="line.481"></a>
+<span class="sourceLineNo">482</span>        for (int index = (listeners_copy.size()-1); index &gt;= 0; index --) {<a name="line.482"></a>
+<span class="sourceLineNo">483</span>            GpioPinListener listener = listeners_copy.get(index);<a name="line.483"></a>
+<span class="sourceLineNo">484</span>            removeListener(listener);<a name="line.484"></a>
+<span class="sourceLineNo">485</span>        }<a name="line.485"></a>
+<span class="sourceLineNo">486</span>    }<a name="line.486"></a>
+<span class="sourceLineNo">487</span><a name="line.487"></a>
+<span class="sourceLineNo">488</span>    /**<a name="line.488"></a>
+<span class="sourceLineNo">489</span>     *<a name="line.489"></a>
+<span class="sourceLineNo">490</span>     */<a name="line.490"></a>
+<span class="sourceLineNo">491</span>    public synchronized Collection&lt;GpioTrigger&gt; getTriggers() {<a name="line.491"></a>
+<span class="sourceLineNo">492</span>        return triggers;<a name="line.492"></a>
 <span class="sourceLineNo">493</span>    }<a name="line.493"></a>
 <span class="sourceLineNo">494</span><a name="line.494"></a>
-<span class="sourceLineNo">495</span>    public synchronized void addTrigger(List&lt;? extends GpioTrigger&gt; triggers) {<a name="line.495"></a>
-<span class="sourceLineNo">496</span>        for (GpioTrigger trigger : triggers) {<a name="line.496"></a>
-<span class="sourceLineNo">497</span>            addTrigger(trigger);<a name="line.497"></a>
+<span class="sourceLineNo">495</span>    public synchronized void addTrigger(GpioTrigger... trigger) {<a name="line.495"></a>
+<span class="sourceLineNo">496</span>        if (trigger == null || trigger.length == 0) {<a name="line.496"></a>
+<span class="sourceLineNo">497</span>            throw new IllegalArgumentException("Missing trigger argument.");<a name="line.497"></a>
 <span class="sourceLineNo">498</span>        }<a name="line.498"></a>
-<span class="sourceLineNo">499</span>    }<a name="line.499"></a>
-<span class="sourceLineNo">500</span><a name="line.500"></a>
-<span class="sourceLineNo">501</span>    /**<a name="line.501"></a>
-<span class="sourceLineNo">502</span>     * <a name="line.502"></a>
-<span class="sourceLineNo">503</span>     * @param trigger GPIO trigger interface<a name="line.503"></a>
-<span class="sourceLineNo">504</span>     */<a name="line.504"></a>
-<span class="sourceLineNo">505</span>    public synchronized void removeTrigger(GpioTrigger... trigger) {<a name="line.505"></a>
-<span class="sourceLineNo">506</span>        if (trigger == null || trigger.length == 0) {<a name="line.506"></a>
-<span class="sourceLineNo">507</span>            throw new IllegalArgumentException("Missing trigger argument.");<a name="line.507"></a>
-<span class="sourceLineNo">508</span>        }<a name="line.508"></a>
-<span class="sourceLineNo">509</span>        for (GpioTrigger trgr : trigger) {<a name="line.509"></a>
-<span class="sourceLineNo">510</span>            triggers.remove(trgr);<a name="line.510"></a>
-<span class="sourceLineNo">511</span>        }<a name="line.511"></a>
-<span class="sourceLineNo">512</span>        <a name="line.512"></a>
-<span class="sourceLineNo">513</span>        updateInterruptListener();<a name="line.513"></a>
-<span class="sourceLineNo">514</span>    }<a name="line.514"></a>
-<span class="sourceLineNo">515</span><a name="line.515"></a>
-<span class="sourceLineNo">516</span>    public synchronized void removeTrigger(List&lt;? extends GpioTrigger&gt; triggers) {<a name="line.516"></a>
-<span class="sourceLineNo">517</span>        for (GpioTrigger trigger : triggers) {<a name="line.517"></a>
-<span class="sourceLineNo">518</span>            removeTrigger(trigger);<a name="line.518"></a>
+<span class="sourceLineNo">499</span>        Collections.addAll(triggers, trigger);<a name="line.499"></a>
+<span class="sourceLineNo">500</span>        updateInterruptListener();<a name="line.500"></a>
+<span class="sourceLineNo">501</span>    }<a name="line.501"></a>
+<span class="sourceLineNo">502</span><a name="line.502"></a>
+<span class="sourceLineNo">503</span>    public synchronized void addTrigger(List&lt;? extends GpioTrigger&gt; triggers) {<a name="line.503"></a>
+<span class="sourceLineNo">504</span>        for (GpioTrigger trigger : triggers) {<a name="line.504"></a>
+<span class="sourceLineNo">505</span>            addTrigger(trigger);<a name="line.505"></a>
+<span class="sourceLineNo">506</span>        }<a name="line.506"></a>
+<span class="sourceLineNo">507</span>    }<a name="line.507"></a>
+<span class="sourceLineNo">508</span><a name="line.508"></a>
+<span class="sourceLineNo">509</span>    /**<a name="line.509"></a>
+<span class="sourceLineNo">510</span>     *<a name="line.510"></a>
+<span class="sourceLineNo">511</span>     * @param trigger GPIO trigger interface<a name="line.511"></a>
+<span class="sourceLineNo">512</span>     */<a name="line.512"></a>
+<span class="sourceLineNo">513</span>    public synchronized void removeTrigger(GpioTrigger... trigger) {<a name="line.513"></a>
+<span class="sourceLineNo">514</span>        if (trigger == null || trigger.length == 0) {<a name="line.514"></a>
+<span class="sourceLineNo">515</span>            throw new IllegalArgumentException("Missing trigger argument.");<a name="line.515"></a>
+<span class="sourceLineNo">516</span>        }<a name="line.516"></a>
+<span class="sourceLineNo">517</span>        for (GpioTrigger trgr : trigger) {<a name="line.517"></a>
+<span class="sourceLineNo">518</span>            triggers.remove(trgr);<a name="line.518"></a>
 <span class="sourceLineNo">519</span>        }<a name="line.519"></a>
-<span class="sourceLineNo">520</span>    }<a name="line.520"></a>
-<span class="sourceLineNo">521</span><a name="line.521"></a>
-<span class="sourceLineNo">522</span>    public synchronized void removeAllTriggers() {<a name="line.522"></a>
-<span class="sourceLineNo">523</span>        List&lt;GpioTrigger&gt; triggers_copy = new ArrayList&lt;&gt;(triggers);<a name="line.523"></a>
-<span class="sourceLineNo">524</span>        for (int index = triggers_copy.size() - 1; index &gt;= 0; index--) {<a name="line.524"></a>
-<span class="sourceLineNo">525</span>            GpioTrigger trigger = triggers_copy.get(index);<a name="line.525"></a>
+<span class="sourceLineNo">520</span><a name="line.520"></a>
+<span class="sourceLineNo">521</span>        updateInterruptListener();<a name="line.521"></a>
+<span class="sourceLineNo">522</span>    }<a name="line.522"></a>
+<span class="sourceLineNo">523</span><a name="line.523"></a>
+<span class="sourceLineNo">524</span>    public synchronized void removeTrigger(List&lt;? extends GpioTrigger&gt; triggers) {<a name="line.524"></a>
+<span class="sourceLineNo">525</span>        for (GpioTrigger trigger : triggers) {<a name="line.525"></a>
 <span class="sourceLineNo">526</span>            removeTrigger(trigger);<a name="line.526"></a>
 <span class="sourceLineNo">527</span>        }<a name="line.527"></a>
 <span class="sourceLineNo">528</span>    }<a name="line.528"></a>
 <span class="sourceLineNo">529</span><a name="line.529"></a>
-<span class="sourceLineNo">530</span>    @Override<a name="line.530"></a>
-<span class="sourceLineNo">531</span>    public String toString() {<a name="line.531"></a>
-<span class="sourceLineNo">532</span>        if (name != null &amp;&amp; !name.isEmpty()) {<a name="line.532"></a>
-<span class="sourceLineNo">533</span>            return String.format("\"%s\" &lt;%s&gt;", name, pin.toString());<a name="line.533"></a>
-<span class="sourceLineNo">534</span>        } else {<a name="line.534"></a>
-<span class="sourceLineNo">535</span>            return pin.toString();<a name="line.535"></a>
-<span class="sourceLineNo">536</span>        }<a name="line.536"></a>
-<span class="sourceLineNo">537</span>    }<a name="line.537"></a>
-<span class="sourceLineNo">538</span><a name="line.538"></a>
-<span class="sourceLineNo">539</span>    @Override<a name="line.539"></a>
-<span class="sourceLineNo">540</span>    public GpioPinShutdown getShutdownOptions() {<a name="line.540"></a>
-<span class="sourceLineNo">541</span>        return shutdownOptions;<a name="line.541"></a>
-<span class="sourceLineNo">542</span>    }<a name="line.542"></a>
-<span class="sourceLineNo">543</span><a name="line.543"></a>
-<span class="sourceLineNo">544</span>    @Override<a name="line.544"></a>
-<span class="sourceLineNo">545</span>    public void setShutdownOptions(GpioPinShutdown options) {<a name="line.545"></a>
-<span class="sourceLineNo">546</span>        shutdownOptions.setUnexport(options.getUnexport());<a name="line.546"></a>
-<span class="sourceLineNo">547</span>        shutdownOptions.setState(options.getState());<a name="line.547"></a>
-<span class="sourceLineNo">548</span>        shutdownOptions.setMode(options.getMode());<a name="line.548"></a>
-<span class="sourceLineNo">549</span>        shutdownOptions.setPullResistor(options.getPullResistor());<a name="line.549"></a>
+<span class="sourceLineNo">530</span>    public synchronized void removeAllTriggers() {<a name="line.530"></a>
+<span class="sourceLineNo">531</span>        List&lt;GpioTrigger&gt; triggers_copy = new ArrayList&lt;&gt;(triggers);<a name="line.531"></a>
+<span class="sourceLineNo">532</span>        for (int index = triggers_copy.size() - 1; index &gt;= 0; index--) {<a name="line.532"></a>
+<span class="sourceLineNo">533</span>            GpioTrigger trigger = triggers_copy.get(index);<a name="line.533"></a>
+<span class="sourceLineNo">534</span>            removeTrigger(trigger);<a name="line.534"></a>
+<span class="sourceLineNo">535</span>        }<a name="line.535"></a>
+<span class="sourceLineNo">536</span>    }<a name="line.536"></a>
+<span class="sourceLineNo">537</span><a name="line.537"></a>
+<span class="sourceLineNo">538</span>    @Override<a name="line.538"></a>
+<span class="sourceLineNo">539</span>    public String toString() {<a name="line.539"></a>
+<span class="sourceLineNo">540</span>        if (name != null &amp;&amp; !name.isEmpty()) {<a name="line.540"></a>
+<span class="sourceLineNo">541</span>            return String.format("\"%s\" &lt;%s&gt;", name, pin.toString());<a name="line.541"></a>
+<span class="sourceLineNo">542</span>        } else {<a name="line.542"></a>
+<span class="sourceLineNo">543</span>            return pin.toString();<a name="line.543"></a>
+<span class="sourceLineNo">544</span>        }<a name="line.544"></a>
+<span class="sourceLineNo">545</span>    }<a name="line.545"></a>
+<span class="sourceLineNo">546</span><a name="line.546"></a>
+<span class="sourceLineNo">547</span>    @Override<a name="line.547"></a>
+<span class="sourceLineNo">548</span>    public GpioPinShutdown getShutdownOptions() {<a name="line.548"></a>
+<span class="sourceLineNo">549</span>        return shutdownOptions;<a name="line.549"></a>
 <span class="sourceLineNo">550</span>    }<a name="line.550"></a>
 <span class="sourceLineNo">551</span><a name="line.551"></a>
 <span class="sourceLineNo">552</span>    @Override<a name="line.552"></a>
-<span class="sourceLineNo">553</span>    public void setShutdownOptions(Boolean unexport) {<a name="line.553"></a>
-<span class="sourceLineNo">554</span>        setShutdownOptions(unexport, null);<a name="line.554"></a>
-<span class="sourceLineNo">555</span>    }<a name="line.555"></a>
-<span class="sourceLineNo">556</span><a name="line.556"></a>
-<span class="sourceLineNo">557</span>    @Override<a name="line.557"></a>
-<span class="sourceLineNo">558</span>    public void setShutdownOptions(Boolean unexport, PinState state) {<a name="line.558"></a>
-<span class="sourceLineNo">559</span>        setShutdownOptions(unexport, state, null);<a name="line.559"></a>
-<span class="sourceLineNo">560</span>    }<a name="line.560"></a>
-<span class="sourceLineNo">561</span><a name="line.561"></a>
-<span class="sourceLineNo">562</span>    @Override<a name="line.562"></a>
-<span class="sourceLineNo">563</span>    public void setShutdownOptions(Boolean unexport, PinState state, PinPullResistance resistance)<a name="line.563"></a>
-<span class="sourceLineNo">564</span>    {<a name="line.564"></a>
-<span class="sourceLineNo">565</span>        setShutdownOptions(unexport, state, resistance, null);<a name="line.565"></a>
-<span class="sourceLineNo">566</span>    }<a name="line.566"></a>
-<span class="sourceLineNo">567</span><a name="line.567"></a>
-<span class="sourceLineNo">568</span>    @Override<a name="line.568"></a>
-<span class="sourceLineNo">569</span>    public void setShutdownOptions(Boolean unexport, PinState state, PinPullResistance resistance, PinMode mode) {<a name="line.569"></a>
-<span class="sourceLineNo">570</span>        shutdownOptions.setUnexport(unexport);<a name="line.570"></a>
-<span class="sourceLineNo">571</span>        shutdownOptions.setState(state);<a name="line.571"></a>
-<span class="sourceLineNo">572</span>        shutdownOptions.setMode(mode);<a name="line.572"></a>
-<span class="sourceLineNo">573</span>        shutdownOptions.setPullResistor(resistance);<a name="line.573"></a>
+<span class="sourceLineNo">553</span>    public void setShutdownOptions(GpioPinShutdown options) {<a name="line.553"></a>
+<span class="sourceLineNo">554</span>        shutdownOptions.setUnexport(options.getUnexport());<a name="line.554"></a>
+<span class="sourceLineNo">555</span>        shutdownOptions.setState(options.getState());<a name="line.555"></a>
+<span class="sourceLineNo">556</span>        shutdownOptions.setMode(options.getMode());<a name="line.556"></a>
+<span class="sourceLineNo">557</span>        shutdownOptions.setPullResistor(options.getPullResistor());<a name="line.557"></a>
+<span class="sourceLineNo">558</span>    }<a name="line.558"></a>
+<span class="sourceLineNo">559</span><a name="line.559"></a>
+<span class="sourceLineNo">560</span>    @Override<a name="line.560"></a>
+<span class="sourceLineNo">561</span>    public void setShutdownOptions(Boolean unexport) {<a name="line.561"></a>
+<span class="sourceLineNo">562</span>        setShutdownOptions(unexport, null);<a name="line.562"></a>
+<span class="sourceLineNo">563</span>    }<a name="line.563"></a>
+<span class="sourceLineNo">564</span><a name="line.564"></a>
+<span class="sourceLineNo">565</span>    @Override<a name="line.565"></a>
+<span class="sourceLineNo">566</span>    public void setShutdownOptions(Boolean unexport, PinState state) {<a name="line.566"></a>
+<span class="sourceLineNo">567</span>        setShutdownOptions(unexport, state, null);<a name="line.567"></a>
+<span class="sourceLineNo">568</span>    }<a name="line.568"></a>
+<span class="sourceLineNo">569</span><a name="line.569"></a>
+<span class="sourceLineNo">570</span>    @Override<a name="line.570"></a>
+<span class="sourceLineNo">571</span>    public void setShutdownOptions(Boolean unexport, PinState state, PinPullResistance resistance)<a name="line.571"></a>
+<span class="sourceLineNo">572</span>    {<a name="line.572"></a>
+<span class="sourceLineNo">573</span>        setShutdownOptions(unexport, state, resistance, null);<a name="line.573"></a>
 <span class="sourceLineNo">574</span>    }<a name="line.574"></a>
 <span class="sourceLineNo">575</span><a name="line.575"></a>
-<span class="sourceLineNo">576</span>}<a name="line.576"></a>
+<span class="sourceLineNo">576</span>    @Override<a name="line.576"></a>
+<span class="sourceLineNo">577</span>    public void setShutdownOptions(Boolean unexport, PinState state, PinPullResistance resistance, PinMode mode) {<a name="line.577"></a>
+<span class="sourceLineNo">578</span>        shutdownOptions.setUnexport(unexport);<a name="line.578"></a>
+<span class="sourceLineNo">579</span>        shutdownOptions.setState(state);<a name="line.579"></a>
+<span class="sourceLineNo">580</span>        shutdownOptions.setMode(mode);<a name="line.580"></a>
+<span class="sourceLineNo">581</span>        shutdownOptions.setPullResistor(resistance);<a name="line.581"></a>
+<span class="sourceLineNo">582</span>    }<a name="line.582"></a>
+<span class="sourceLineNo">583</span><a name="line.583"></a>
+<span class="sourceLineNo">584</span>}<a name="line.584"></a>
 
 
 

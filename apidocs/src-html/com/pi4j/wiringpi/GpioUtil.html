@@ -13,24 +13,24 @@
 <span class="sourceLineNo">005</span> * **********************************************************************<a name="line.5"></a>
 <span class="sourceLineNo">006</span> * ORGANIZATION  :  Pi4J<a name="line.6"></a>
 <span class="sourceLineNo">007</span> * PROJECT       :  Pi4J :: Java Library (Core)<a name="line.7"></a>
-<span class="sourceLineNo">008</span> * FILENAME      :  GpioUtil.java  <a name="line.8"></a>
-<span class="sourceLineNo">009</span> * <a name="line.9"></a>
-<span class="sourceLineNo">010</span> * This file is part of the Pi4J project. More information about <a name="line.10"></a>
+<span class="sourceLineNo">008</span> * FILENAME      :  GpioUtil.java<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * This file is part of the Pi4J project. More information about<a name="line.10"></a>
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2015 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
 <span class="sourceLineNo">018</span> * published by the Free Software Foundation, either version 3 of the<a name="line.18"></a>
 <span class="sourceLineNo">019</span> * License, or (at your option) any later version.<a name="line.19"></a>
-<span class="sourceLineNo">020</span> * <a name="line.20"></a>
+<span class="sourceLineNo">020</span> *<a name="line.20"></a>
 <span class="sourceLineNo">021</span> * This program is distributed in the hope that it will be useful,<a name="line.21"></a>
 <span class="sourceLineNo">022</span> * but WITHOUT ANY WARRANTY; without even the implied warranty of<a name="line.22"></a>
 <span class="sourceLineNo">023</span> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<a name="line.23"></a>
 <span class="sourceLineNo">024</span> * GNU General Lesser Public License for more details.<a name="line.24"></a>
-<span class="sourceLineNo">025</span> * <a name="line.25"></a>
+<span class="sourceLineNo">025</span> *<a name="line.25"></a>
 <span class="sourceLineNo">026</span> * You should have received a copy of the GNU General Lesser Public<a name="line.26"></a>
 <span class="sourceLineNo">027</span> * License along with this program.  If not, see<a name="line.27"></a>
 <span class="sourceLineNo">028</span> * &lt;http://www.gnu.org/licenses/lgpl-3.0.html&gt;.<a name="line.28"></a>
@@ -42,7 +42,7 @@
 <span class="sourceLineNo">034</span><a name="line.34"></a>
 <span class="sourceLineNo">035</span>/**<a name="line.35"></a>
 <span class="sourceLineNo">036</span> * &lt;p&gt;This utility class is provided to export, unexport, and manipulate pin direction.&lt;/p&gt;<a name="line.36"></a>
-<span class="sourceLineNo">037</span> * <a name="line.37"></a>
+<span class="sourceLineNo">037</span> *<a name="line.37"></a>
 <span class="sourceLineNo">038</span> * &lt;p&gt;<a name="line.38"></a>
 <span class="sourceLineNo">039</span> * Before using the Pi4J library, you need to ensure that the Java VM in configured with access to<a name="line.39"></a>
 <span class="sourceLineNo">040</span> * the following system libraries:<a name="line.40"></a>
@@ -54,7 +54,7 @@
 <span class="sourceLineNo">046</span> * Gordon Henderson @ &lt;a href="http://wiringpi.com/"&gt;http://wiringpi.com/&lt;/a&gt;)<a name="line.46"></a>
 <span class="sourceLineNo">047</span> * &lt;/blockquote&gt;<a name="line.47"></a>
 <span class="sourceLineNo">048</span> * &lt;/p&gt;<a name="line.48"></a>
-<span class="sourceLineNo">049</span> * <a name="line.49"></a>
+<span class="sourceLineNo">049</span> *<a name="line.49"></a>
 <span class="sourceLineNo">050</span> * @see &lt;a href="http://www.pi4j.com/"&gt;http://www.pi4j.com/&lt;/a&gt;<a name="line.50"></a>
 <span class="sourceLineNo">051</span> * @see &lt;a<a name="line.51"></a>
 <span class="sourceLineNo">052</span> *      href="http://wiringpi.com/"&gt;http://wiringpi.com/&lt;/a&gt;<a name="line.52"></a>
@@ -62,11 +62,11 @@
 <span class="sourceLineNo">054</span> *         href="http://www.savagehomeautomation.com"&gt;http://www.savagehomeautomation.com&lt;/a&gt;)<a name="line.54"></a>
 <span class="sourceLineNo">055</span> */<a name="line.55"></a>
 <span class="sourceLineNo">056</span>public class GpioUtil {<a name="line.56"></a>
-<span class="sourceLineNo">057</span>    // private constructor <a name="line.57"></a>
+<span class="sourceLineNo">057</span>    // private constructor<a name="line.57"></a>
 <span class="sourceLineNo">058</span>    private GpioUtil() {<a name="line.58"></a>
-<span class="sourceLineNo">059</span>        // forbid object construction <a name="line.59"></a>
+<span class="sourceLineNo">059</span>        // forbid object construction<a name="line.59"></a>
 <span class="sourceLineNo">060</span>    }<a name="line.60"></a>
-<span class="sourceLineNo">061</span>    <a name="line.61"></a>
+<span class="sourceLineNo">061</span><a name="line.61"></a>
 <span class="sourceLineNo">062</span>    static {<a name="line.62"></a>
 <span class="sourceLineNo">063</span>        // Load the platform library<a name="line.63"></a>
 <span class="sourceLineNo">064</span>        NativeLibraryLoader.load("libpi4j.so");<a name="line.64"></a>
@@ -77,7 +77,7 @@
 <span class="sourceLineNo">069</span>     * &lt;p&gt;<a name="line.69"></a>
 <span class="sourceLineNo">070</span>     * GPIO pin constant for IN direction for reading pin states<a name="line.70"></a>
 <span class="sourceLineNo">071</span>     * &lt;/p&gt;<a name="line.71"></a>
-<span class="sourceLineNo">072</span>     * <a name="line.72"></a>
+<span class="sourceLineNo">072</span>     *<a name="line.72"></a>
 <span class="sourceLineNo">073</span>     * @see #export(int,int)<a name="line.73"></a>
 <span class="sourceLineNo">074</span>     * @see #setDirection(int,int)<a name="line.74"></a>
 <span class="sourceLineNo">075</span>     * @see #getDirection(int)<a name="line.75"></a>
@@ -89,7 +89,7 @@
 <span class="sourceLineNo">081</span>     * &lt;p&gt;<a name="line.81"></a>
 <span class="sourceLineNo">082</span>     * GPIO pin constant for OUT direction for writing digital pin states (0/1).<a name="line.82"></a>
 <span class="sourceLineNo">083</span>     * &lt;/p&gt;<a name="line.83"></a>
-<span class="sourceLineNo">084</span>     * <a name="line.84"></a>
+<span class="sourceLineNo">084</span>     *<a name="line.84"></a>
 <span class="sourceLineNo">085</span>     * @see #export(int,int)<a name="line.85"></a>
 <span class="sourceLineNo">086</span>     * @see #setDirection(int,int)<a name="line.86"></a>
 <span class="sourceLineNo">087</span>     * @see #getDirection(int)<a name="line.87"></a>
@@ -126,7 +126,7 @@
 <span class="sourceLineNo">118</span>     * This constant is provided as an edge detection mode for use with the 'edge' method. This<a name="line.118"></a>
 <span class="sourceLineNo">119</span>     * constants instructs the edge detection to be disabled.<a name="line.119"></a>
 <span class="sourceLineNo">120</span>     * &lt;/p&gt;<a name="line.120"></a>
-<span class="sourceLineNo">121</span>     * <a name="line.121"></a>
+<span class="sourceLineNo">121</span>     *<a name="line.121"></a>
 <span class="sourceLineNo">122</span>     * @see #setEdgeDetection(int,int)<a name="line.122"></a>
 <span class="sourceLineNo">123</span>     */<a name="line.123"></a>
 <span class="sourceLineNo">124</span>    public static final int EDGE_NONE = 0;<a name="line.124"></a>
@@ -138,7 +138,7 @@
 <span class="sourceLineNo">130</span>     * constants instructs the edge detection to only look for rising and falling pins states; pins<a name="line.130"></a>
 <span class="sourceLineNo">131</span>     * changing from LOW to HIGH or HIGH to LOW.<a name="line.131"></a>
 <span class="sourceLineNo">132</span>     * &lt;/p&gt;<a name="line.132"></a>
-<span class="sourceLineNo">133</span>     * <a name="line.133"></a>
+<span class="sourceLineNo">133</span>     *<a name="line.133"></a>
 <span class="sourceLineNo">134</span>     * @see #setEdgeDetection(int,int)<a name="line.134"></a>
 <span class="sourceLineNo">135</span>     */<a name="line.135"></a>
 <span class="sourceLineNo">136</span>    public static final int EDGE_BOTH = 1;<a name="line.136"></a>
@@ -150,7 +150,7 @@
 <span class="sourceLineNo">142</span>     * constants instructs the edge detection to only look for rising pins states; pins changing<a name="line.142"></a>
 <span class="sourceLineNo">143</span>     * from LOW to HIGH.<a name="line.143"></a>
 <span class="sourceLineNo">144</span>     * &lt;/p&gt;<a name="line.144"></a>
-<span class="sourceLineNo">145</span>     * <a name="line.145"></a>
+<span class="sourceLineNo">145</span>     *<a name="line.145"></a>
 <span class="sourceLineNo">146</span>     * @see #setEdgeDetection(int,int)<a name="line.146"></a>
 <span class="sourceLineNo">147</span>     */<a name="line.147"></a>
 <span class="sourceLineNo">148</span>    public static final int EDGE_RISING = 2;<a name="line.148"></a>
@@ -162,7 +162,7 @@
 <span class="sourceLineNo">154</span>     * constants instructs the edge detection to only look for falling pins states; pins changing<a name="line.154"></a>
 <span class="sourceLineNo">155</span>     * from HIGH to LOW.<a name="line.155"></a>
 <span class="sourceLineNo">156</span>     * &lt;/p&gt;<a name="line.156"></a>
-<span class="sourceLineNo">157</span>     * <a name="line.157"></a>
+<span class="sourceLineNo">157</span>     *<a name="line.157"></a>
 <span class="sourceLineNo">158</span>     * @see #setEdgeDetection(int,int)<a name="line.158"></a>
 <span class="sourceLineNo">159</span>     */<a name="line.159"></a>
 <span class="sourceLineNo">160</span>    public static final int EDGE_FALLING = 3;<a name="line.160"></a>
@@ -174,10 +174,10 @@
 <span class="sourceLineNo">166</span>     * &lt;p&gt;<a name="line.166"></a>
 <span class="sourceLineNo">167</span>     * This method required root permissions access.<a name="line.167"></a>
 <span class="sourceLineNo">168</span>     * &lt;/p&gt;<a name="line.168"></a>
-<span class="sourceLineNo">169</span>     * <a name="line.169"></a>
+<span class="sourceLineNo">169</span>     *<a name="line.169"></a>
 <span class="sourceLineNo">170</span>     * @see #DIRECTION_IN<a name="line.170"></a>
 <span class="sourceLineNo">171</span>     * @see #DIRECTION_OUT<a name="line.171"></a>
-<span class="sourceLineNo">172</span>     * <a name="line.172"></a>
+<span class="sourceLineNo">172</span>     *<a name="line.172"></a>
 <span class="sourceLineNo">173</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.173"></a>
 <span class="sourceLineNo">174</span>     * @param direction pin direction<a name="line.174"></a>
 <span class="sourceLineNo">175</span>     */<a name="line.175"></a>
@@ -186,14 +186,14 @@
 <span class="sourceLineNo">178</span>    /**<a name="line.178"></a>
 <span class="sourceLineNo">179</span>     * &lt;p&gt;This method will unexport the selected GPIO pin.&lt;/p&gt;<a name="line.179"></a>
 <span class="sourceLineNo">180</span>     * &lt;p&gt;This method required root permissions access.&lt;/p&gt;<a name="line.180"></a>
-<span class="sourceLineNo">181</span>     * <a name="line.181"></a>
+<span class="sourceLineNo">181</span>     *<a name="line.181"></a>
 <span class="sourceLineNo">182</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.182"></a>
 <span class="sourceLineNo">183</span>     */<a name="line.183"></a>
 <span class="sourceLineNo">184</span>    public static native void unexport(int pin) throws RuntimeException;<a name="line.184"></a>
 <span class="sourceLineNo">185</span><a name="line.185"></a>
 <span class="sourceLineNo">186</span>    /**<a name="line.186"></a>
 <span class="sourceLineNo">187</span>     * &lt;p&gt;This method determines if the requested GPIO pin is already exported.&lt;/p&gt;<a name="line.187"></a>
-<span class="sourceLineNo">188</span>     * <a name="line.188"></a>
+<span class="sourceLineNo">188</span>     *<a name="line.188"></a>
 <span class="sourceLineNo">189</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.189"></a>
 <span class="sourceLineNo">190</span>     * @return A return value of '0' represents that the pin is not exported. &lt;/br&gt; A return value<a name="line.190"></a>
 <span class="sourceLineNo">191</span>     *         of '1' represents that the pin is exported.<a name="line.191"></a>
@@ -207,12 +207,12 @@
 <span class="sourceLineNo">199</span>     * NOTE: Calling this method will automatically export the pin and set the pin direction to<a name="line.199"></a>
 <span class="sourceLineNo">200</span>     * INPUT.&lt;/br&gt; This method required root permissions access.<a name="line.200"></a>
 <span class="sourceLineNo">201</span>     * &lt;/p&gt;<a name="line.201"></a>
-<span class="sourceLineNo">202</span>     * <a name="line.202"></a>
+<span class="sourceLineNo">202</span>     *<a name="line.202"></a>
 <span class="sourceLineNo">203</span>     * @see #EDGE_NONE<a name="line.203"></a>
 <span class="sourceLineNo">204</span>     * @see #EDGE_BOTH<a name="line.204"></a>
 <span class="sourceLineNo">205</span>     * @see #EDGE_RISING<a name="line.205"></a>
 <span class="sourceLineNo">206</span>     * @see #EDGE_FALLING<a name="line.206"></a>
-<span class="sourceLineNo">207</span>     * <a name="line.207"></a>
+<span class="sourceLineNo">207</span>     *<a name="line.207"></a>
 <span class="sourceLineNo">208</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.208"></a>
 <span class="sourceLineNo">209</span>     * @param edge The edge condition to detect: none, rising, falling, or both. &lt;/br&gt;The following<a name="line.209"></a>
 <span class="sourceLineNo">210</span>     *            constants are provided for use with this parameter:<a name="line.210"></a>
@@ -230,12 +230,12 @@
 <span class="sourceLineNo">222</span>     * &lt;p&gt;This method will get the selected GPIO pin's edge detection setting. Edge detection instructs<a name="line.222"></a>
 <span class="sourceLineNo">223</span>     * when the hardware GPIO changes raise interrupts on the system.<a name="line.223"></a>
 <span class="sourceLineNo">224</span>     * &lt;/p&gt;<a name="line.224"></a>
-<span class="sourceLineNo">225</span>     * <a name="line.225"></a>
+<span class="sourceLineNo">225</span>     *<a name="line.225"></a>
 <span class="sourceLineNo">226</span>     * @see #EDGE_NONE<a name="line.226"></a>
 <span class="sourceLineNo">227</span>     * @see #EDGE_BOTH<a name="line.227"></a>
 <span class="sourceLineNo">228</span>     * @see #EDGE_RISING<a name="line.228"></a>
 <span class="sourceLineNo">229</span>     * @see #EDGE_FALLING<a name="line.229"></a>
-<span class="sourceLineNo">230</span>     * <a name="line.230"></a>
+<span class="sourceLineNo">230</span>     *<a name="line.230"></a>
 <span class="sourceLineNo">231</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.231"></a>
 <span class="sourceLineNo">232</span>     * @return The edge condition detected on the selected pin: none, rising, falling, or both.<a name="line.232"></a>
 <span class="sourceLineNo">233</span>     *         &lt;/br&gt;The following constants are provided for use with this parameter:<a name="line.233"></a>
@@ -250,12 +250,12 @@
 <span class="sourceLineNo">242</span><a name="line.242"></a>
 <span class="sourceLineNo">243</span>    /**<a name="line.243"></a>
 <span class="sourceLineNo">244</span>     * &lt;p&gt;This method will set the selected GPIO pin's export direction.&lt;/p&gt;<a name="line.244"></a>
-<span class="sourceLineNo">245</span>     * <a name="line.245"></a>
+<span class="sourceLineNo">245</span>     *<a name="line.245"></a>
 <span class="sourceLineNo">246</span>     * @see #DIRECTION_IN<a name="line.246"></a>
 <span class="sourceLineNo">247</span>     * @see #DIRECTION_OUT<a name="line.247"></a>
-<span class="sourceLineNo">248</span>     * <a name="line.248"></a>
+<span class="sourceLineNo">248</span>     *<a name="line.248"></a>
 <span class="sourceLineNo">249</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.249"></a>
-<span class="sourceLineNo">250</span>     * @param direction <a name="line.250"></a>
+<span class="sourceLineNo">250</span>     * @param direction<a name="line.250"></a>
 <span class="sourceLineNo">251</span>     *            The export direction to apply: IN, OUT. &lt;/br&gt;The following constants are provided<a name="line.251"></a>
 <span class="sourceLineNo">252</span>     *            for use with this parameter:<a name="line.252"></a>
 <span class="sourceLineNo">253</span>     *            &lt;ul&gt;<a name="line.253"></a>
@@ -270,10 +270,10 @@
 <span class="sourceLineNo">262</span>     * &lt;p&gt;<a name="line.262"></a>
 <span class="sourceLineNo">263</span>     * This method will get the selected GPIO pin's export direction.<a name="line.263"></a>
 <span class="sourceLineNo">264</span>     * &lt;/p&gt;<a name="line.264"></a>
-<span class="sourceLineNo">265</span>     * <a name="line.265"></a>
+<span class="sourceLineNo">265</span>     *<a name="line.265"></a>
 <span class="sourceLineNo">266</span>     * @see #DIRECTION_IN<a name="line.266"></a>
 <span class="sourceLineNo">267</span>     * @see #DIRECTION_OUT<a name="line.267"></a>
-<span class="sourceLineNo">268</span>     * <a name="line.268"></a>
+<span class="sourceLineNo">268</span>     *<a name="line.268"></a>
 <span class="sourceLineNo">269</span>     * @param pin GPIO pin number (not header pin number; not wiringPi pin number)<a name="line.269"></a>
 <span class="sourceLineNo">270</span>     * @return The GPIO pin's configured export direction is returned: IN (0), OUT (1). &lt;/br&gt;The<a name="line.270"></a>
 <span class="sourceLineNo">271</span>     *         following constants are provided for use with this parameter:<a name="line.271"></a>
@@ -293,7 +293,36 @@
 <span class="sourceLineNo">285</span>     * @return '1' is the pin is supported, else '0'<a name="line.285"></a>
 <span class="sourceLineNo">286</span>     */<a name="line.286"></a>
 <span class="sourceLineNo">287</span>    public static native int isPinSupported(int pin) throws RuntimeException;<a name="line.287"></a>
-<span class="sourceLineNo">288</span>}<a name="line.288"></a>
+<span class="sourceLineNo">288</span><a name="line.288"></a>
+<span class="sourceLineNo">289</span>    /**<a name="line.289"></a>
+<span class="sourceLineNo">290</span>     * &lt;p&gt;<a name="line.290"></a>
+<span class="sourceLineNo">291</span>     * This method will return a value of '1' if Privileged access is required.<a name="line.291"></a>
+<span class="sourceLineNo">292</span>     * This method will return a value of '0' if Privileged access is NOT required.<a name="line.292"></a>
+<span class="sourceLineNo">293</span>     * Privileged access is required if any of the the following conditions are not met:<a name="line.293"></a>
+<span class="sourceLineNo">294</span>     *    - You are running with Linux kernel version 4.1.7 or greater<a name="line.294"></a>
+<span class="sourceLineNo">295</span>     *    - The Device Tree is enabled<a name="line.295"></a>
+<span class="sourceLineNo">296</span>     *    - The 'bcm2835_gpiomem' kernel module loaded.<a name="line.296"></a>
+<span class="sourceLineNo">297</span>     *    - Udev rules are configured to permit write access to '/sys/class/gpio/**'<a name="line.297"></a>
+<span class="sourceLineNo">298</span>     *<a name="line.298"></a>
+<span class="sourceLineNo">299</span>     * &lt;/p&gt;<a name="line.299"></a>
+<span class="sourceLineNo">300</span>     *<a name="line.300"></a>
+<span class="sourceLineNo">301</span>     * @return 'true' if privileged access is required; else returns 'false'.<a name="line.301"></a>
+<span class="sourceLineNo">302</span>     */<a name="line.302"></a>
+<span class="sourceLineNo">303</span>    public static native boolean isPrivilegedAccessRequired() throws RuntimeException;<a name="line.303"></a>
+<span class="sourceLineNo">304</span><a name="line.304"></a>
+<span class="sourceLineNo">305</span>    /**<a name="line.305"></a>
+<span class="sourceLineNo">306</span>     * &lt;p&gt;<a name="line.306"></a>
+<span class="sourceLineNo">307</span>     *  This method is used to enable non-privileged access to the GPIO pins on<a name="line.307"></a>
+<span class="sourceLineNo">308</span>     *  to system.  This method will throw a runtime exception if privileged access<a name="line.308"></a>
+<span class="sourceLineNo">309</span>     *  is required.  You can test for required access using the 'isPrivilegedAccessRequired()'<a name="line.309"></a>
+<span class="sourceLineNo">310</span>     *  method.<a name="line.310"></a>
+<span class="sourceLineNo">311</span>     *<a name="line.311"></a>
+<span class="sourceLineNo">312</span>     *  Please note when non-privileged access is enabled, you will not be able to<a name="line.312"></a>
+<span class="sourceLineNo">313</span>     *  use any hardware PWM or CLOCK functions.<a name="line.313"></a>
+<span class="sourceLineNo">314</span>     * &lt;/p&gt;<a name="line.314"></a>
+<span class="sourceLineNo">315</span>     */<a name="line.315"></a>
+<span class="sourceLineNo">316</span>    public static native void enableNonPrivilegedAccess() throws RuntimeException;<a name="line.316"></a>
+<span class="sourceLineNo">317</span>}<a name="line.317"></a>
 
 
 
