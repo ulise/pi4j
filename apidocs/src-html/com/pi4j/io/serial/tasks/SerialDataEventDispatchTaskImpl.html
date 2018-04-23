@@ -19,7 +19,7 @@
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
@@ -58,7 +58,7 @@
 <span class="sourceLineNo">050</span>    public void run() {<a name="line.50"></a>
 <span class="sourceLineNo">051</span><a name="line.51"></a>
 <span class="sourceLineNo">052</span>        // create a copy of the listeners collection<a name="line.52"></a>
-<span class="sourceLineNo">053</span>        Collection&lt;SerialDataEventListener&gt; listenersCopy  = new ArrayList&lt;SerialDataEventListener&gt;(listeners);<a name="line.53"></a>
+<span class="sourceLineNo">053</span>        Collection&lt;SerialDataEventListener&gt; listenersCopy  = new ArrayList&lt;&gt;(listeners);<a name="line.53"></a>
 <span class="sourceLineNo">054</span><a name="line.54"></a>
 <span class="sourceLineNo">055</span>        // process event callbacks for serial data listeners<a name="line.55"></a>
 <span class="sourceLineNo">056</span>        for (SerialDataEventListener listener : listenersCopy) {<a name="line.56"></a>

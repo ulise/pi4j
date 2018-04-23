@@ -19,7 +19,7 @@
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
@@ -303,7 +303,7 @@
 <span class="sourceLineNo">295</span>        synchronized (listeners) {<a name="line.295"></a>
 <span class="sourceLineNo">296</span>            // create new pin listener entry if one does not already exist<a name="line.296"></a>
 <span class="sourceLineNo">297</span>            if (!listeners.containsKey(pin)) {<a name="line.297"></a>
-<span class="sourceLineNo">298</span>                listeners.put(pin, new ArrayList&lt;PinListener&gt;());<a name="line.298"></a>
+<span class="sourceLineNo">298</span>                listeners.put(pin, new ArrayList&lt;&gt;());<a name="line.298"></a>
 <span class="sourceLineNo">299</span>            }<a name="line.299"></a>
 <span class="sourceLineNo">300</span><a name="line.300"></a>
 <span class="sourceLineNo">301</span>            // add the listener instance to the listeners map entry<a name="line.301"></a>

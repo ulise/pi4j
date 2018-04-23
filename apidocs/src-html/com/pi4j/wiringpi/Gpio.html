@@ -19,7 +19,7 @@
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
@@ -721,156 +721,155 @@
 <span class="sourceLineNo">713</span>     *<a name="line.713"></a>
 <span class="sourceLineNo">714</span>     * @param pin GPIO pin number<a name="line.714"></a>
 <span class="sourceLineNo">715</span>     */<a name="line.715"></a>
-<span class="sourceLineNo">716</span>    @SuppressWarnings("unchecked")<a name="line.716"></a>
-<span class="sourceLineNo">717</span>    private static void isrCallback(int pin) {<a name="line.717"></a>
-<span class="sourceLineNo">718</span>        // dispatch callback to the subscribers for this pin<a name="line.718"></a>
-<span class="sourceLineNo">719</span>        List&lt;GpioInterruptCallback&gt; callbacks = isrCallbacks[pin];<a name="line.719"></a>
-<span class="sourceLineNo">720</span><a name="line.720"></a>
-<span class="sourceLineNo">721</span>        // ensure callbacks collection exists for this pins number<a name="line.721"></a>
-<span class="sourceLineNo">722</span>        if(callbacks != null &amp;&amp; !callbacks.isEmpty()){<a name="line.722"></a>
-<span class="sourceLineNo">723</span>            // iterate over each callback delegate and invoke the callback if the pin and edge type match<a name="line.723"></a>
-<span class="sourceLineNo">724</span>            for(GpioInterruptCallback callback : callbacks){<a name="line.724"></a>
-<span class="sourceLineNo">725</span>                callback.callback(pin);<a name="line.725"></a>
-<span class="sourceLineNo">726</span>            }<a name="line.726"></a>
-<span class="sourceLineNo">727</span>        }<a name="line.727"></a>
-<span class="sourceLineNo">728</span>    }<a name="line.728"></a>
-<span class="sourceLineNo">729</span><a name="line.729"></a>
-<span class="sourceLineNo">730</span>    //    /**<a name="line.730"></a>
-<span class="sourceLineNo">731</span>    //     * --------------------------------------------------------------------------------------------<a name="line.731"></a>
-<span class="sourceLineNo">732</span>    //     * lets not use native code for threading in Java; that could get you into some trouble.<a name="line.732"></a>
-<span class="sourceLineNo">733</span>    //     * --------------------------------------------------------------------------------------------<a name="line.733"></a>
-<span class="sourceLineNo">734</span>    //     * &lt;h1&gt;Concurrent Processing (multi-threading)&lt;/h1&gt;<a name="line.734"></a>
-<span class="sourceLineNo">735</span>    //     *<a name="line.735"></a>
-<span class="sourceLineNo">736</span>    //     * wiringPi has a simplified interface to the Linux implementation of Posix threads, as well as<a name="line.736"></a>
-<span class="sourceLineNo">737</span>    //     * a (simplified) mechanisms to access mutexs (Mutual exclusions)<a name="line.737"></a>
-<span class="sourceLineNo">738</span>    //     *<a name="line.738"></a>
-<span class="sourceLineNo">739</span>    //     * Using these functions you can create a new process (a function inside your main program)<a name="line.739"></a>
-<span class="sourceLineNo">740</span>    //     * which runs concurrently with your main program and using the mutex mechanisms, safely pass<a name="line.740"></a>
-<span class="sourceLineNo">741</span>    //     * variables between them.<a name="line.741"></a>
-<span class="sourceLineNo">742</span>    //     *<a name="line.742"></a>
-<span class="sourceLineNo">743</span>    //     * @see &lt;a<a name="line.743"></a>
-<span class="sourceLineNo">744</span>    //     *      href="http://wiringpi.com/reference/priority-interrupts-and-threads/"&gt;http://wiringpi.com/reference/priority-interrupts-and-threads/&lt;/a&gt;<a name="line.744"></a>
-<span class="sourceLineNo">745</span>    //     */<a name="line.745"></a>
-<span class="sourceLineNo">746</span>    // public static native int piThreadCreate(void fn, int timeout);<a name="line.746"></a>
-<span class="sourceLineNo">747</span>    // public static native void piLock(int key);<a name="line.747"></a>
-<span class="sourceLineNo">748</span>    // public static native void piUnlock(int key);<a name="line.748"></a>
+<span class="sourceLineNo">716</span>    private static void isrCallback(int pin) {<a name="line.716"></a>
+<span class="sourceLineNo">717</span>        // dispatch callback to the subscribers for this pin<a name="line.717"></a>
+<span class="sourceLineNo">718</span>        List&lt;GpioInterruptCallback&gt; callbacks = isrCallbacks[pin];<a name="line.718"></a>
+<span class="sourceLineNo">719</span><a name="line.719"></a>
+<span class="sourceLineNo">720</span>        // ensure callbacks collection exists for this pins number<a name="line.720"></a>
+<span class="sourceLineNo">721</span>        if(callbacks != null &amp;&amp; !callbacks.isEmpty()){<a name="line.721"></a>
+<span class="sourceLineNo">722</span>            // iterate over each callback delegate and invoke the callback if the pin and edge type match<a name="line.722"></a>
+<span class="sourceLineNo">723</span>            for(GpioInterruptCallback callback : callbacks){<a name="line.723"></a>
+<span class="sourceLineNo">724</span>                callback.callback(pin);<a name="line.724"></a>
+<span class="sourceLineNo">725</span>            }<a name="line.725"></a>
+<span class="sourceLineNo">726</span>        }<a name="line.726"></a>
+<span class="sourceLineNo">727</span>    }<a name="line.727"></a>
+<span class="sourceLineNo">728</span><a name="line.728"></a>
+<span class="sourceLineNo">729</span>    //    /**<a name="line.729"></a>
+<span class="sourceLineNo">730</span>    //     * --------------------------------------------------------------------------------------------<a name="line.730"></a>
+<span class="sourceLineNo">731</span>    //     * lets not use native code for threading in Java; that could get you into some trouble.<a name="line.731"></a>
+<span class="sourceLineNo">732</span>    //     * --------------------------------------------------------------------------------------------<a name="line.732"></a>
+<span class="sourceLineNo">733</span>    //     * &lt;h1&gt;Concurrent Processing (multi-threading)&lt;/h1&gt;<a name="line.733"></a>
+<span class="sourceLineNo">734</span>    //     *<a name="line.734"></a>
+<span class="sourceLineNo">735</span>    //     * wiringPi has a simplified interface to the Linux implementation of Posix threads, as well as<a name="line.735"></a>
+<span class="sourceLineNo">736</span>    //     * a (simplified) mechanisms to access mutexs (Mutual exclusions)<a name="line.736"></a>
+<span class="sourceLineNo">737</span>    //     *<a name="line.737"></a>
+<span class="sourceLineNo">738</span>    //     * Using these functions you can create a new process (a function inside your main program)<a name="line.738"></a>
+<span class="sourceLineNo">739</span>    //     * which runs concurrently with your main program and using the mutex mechanisms, safely pass<a name="line.739"></a>
+<span class="sourceLineNo">740</span>    //     * variables between them.<a name="line.740"></a>
+<span class="sourceLineNo">741</span>    //     *<a name="line.741"></a>
+<span class="sourceLineNo">742</span>    //     * @see &lt;a<a name="line.742"></a>
+<span class="sourceLineNo">743</span>    //     *      href="http://wiringpi.com/reference/priority-interrupts-and-threads/"&gt;http://wiringpi.com/reference/priority-interrupts-and-threads/&lt;/a&gt;<a name="line.743"></a>
+<span class="sourceLineNo">744</span>    //     */<a name="line.744"></a>
+<span class="sourceLineNo">745</span>    // public static native int piThreadCreate(void fn, int timeout);<a name="line.745"></a>
+<span class="sourceLineNo">746</span>    // public static native void piLock(int key);<a name="line.746"></a>
+<span class="sourceLineNo">747</span>    // public static native void piUnlock(int key);<a name="line.747"></a>
+<span class="sourceLineNo">748</span><a name="line.748"></a>
 <span class="sourceLineNo">749</span><a name="line.749"></a>
-<span class="sourceLineNo">750</span><a name="line.750"></a>
-<span class="sourceLineNo">751</span>    /**<a name="line.751"></a>
-<span class="sourceLineNo">752</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.752"></a>
-<span class="sourceLineNo">753</span>     *<a name="line.753"></a>
-<span class="sourceLineNo">754</span>     * &lt;p&gt; This method provides the board revision as determined by the wiringPi library.  &lt;/p&gt;<a name="line.754"></a>
-<span class="sourceLineNo">755</span>     *<a name="line.755"></a>
-<span class="sourceLineNo">756</span>     * @see &lt;a<a name="line.756"></a>
-<span class="sourceLineNo">757</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.757"></a>
-<span class="sourceLineNo">758</span>     * @return The return value represents the major board revision version.<a name="line.758"></a>
-<span class="sourceLineNo">759</span>     *         A -1 will be returned if the board revision cannot be determined.<a name="line.759"></a>
-<span class="sourceLineNo">760</span>     */<a name="line.760"></a>
-<span class="sourceLineNo">761</span>    public static native int piBoardRev();<a name="line.761"></a>
+<span class="sourceLineNo">750</span>    /**<a name="line.750"></a>
+<span class="sourceLineNo">751</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.751"></a>
+<span class="sourceLineNo">752</span>     *<a name="line.752"></a>
+<span class="sourceLineNo">753</span>     * &lt;p&gt; This method provides the board revision as determined by the wiringPi library.  &lt;/p&gt;<a name="line.753"></a>
+<span class="sourceLineNo">754</span>     *<a name="line.754"></a>
+<span class="sourceLineNo">755</span>     * @see &lt;a<a name="line.755"></a>
+<span class="sourceLineNo">756</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.756"></a>
+<span class="sourceLineNo">757</span>     * @return The return value represents the major board revision version.<a name="line.757"></a>
+<span class="sourceLineNo">758</span>     *         A -1 will be returned if the board revision cannot be determined.<a name="line.758"></a>
+<span class="sourceLineNo">759</span>     */<a name="line.759"></a>
+<span class="sourceLineNo">760</span>    public static native int piBoardRev();<a name="line.760"></a>
+<span class="sourceLineNo">761</span><a name="line.761"></a>
 <span class="sourceLineNo">762</span><a name="line.762"></a>
-<span class="sourceLineNo">763</span><a name="line.763"></a>
-<span class="sourceLineNo">764</span>    /**<a name="line.764"></a>
-<span class="sourceLineNo">765</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.765"></a>
-<span class="sourceLineNo">766</span>     *<a name="line.766"></a>
-<span class="sourceLineNo">767</span>     * &lt;p&gt; This method provides the edge GPIO pin number for the requested wiringPi pin number.  &lt;/p&gt;<a name="line.767"></a>
-<span class="sourceLineNo">768</span>     *<a name="line.768"></a>
-<span class="sourceLineNo">769</span>     * @see &lt;a<a name="line.769"></a>
-<span class="sourceLineNo">770</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.770"></a>
-<span class="sourceLineNo">771</span>     * @return The return value represents the RaspberryPi GPIO (edge) pin number.<a name="line.771"></a>
-<span class="sourceLineNo">772</span>     *         A -1 will be returned for an invalid pin number.<a name="line.772"></a>
-<span class="sourceLineNo">773</span>     */<a name="line.773"></a>
-<span class="sourceLineNo">774</span>    public static native int wpiPinToGpio(int wpiPin);<a name="line.774"></a>
+<span class="sourceLineNo">763</span>    /**<a name="line.763"></a>
+<span class="sourceLineNo">764</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.764"></a>
+<span class="sourceLineNo">765</span>     *<a name="line.765"></a>
+<span class="sourceLineNo">766</span>     * &lt;p&gt; This method provides the edge GPIO pin number for the requested wiringPi pin number.  &lt;/p&gt;<a name="line.766"></a>
+<span class="sourceLineNo">767</span>     *<a name="line.767"></a>
+<span class="sourceLineNo">768</span>     * @see &lt;a<a name="line.768"></a>
+<span class="sourceLineNo">769</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.769"></a>
+<span class="sourceLineNo">770</span>     * @return The return value represents the RaspberryPi GPIO (edge) pin number.<a name="line.770"></a>
+<span class="sourceLineNo">771</span>     *         A -1 will be returned for an invalid pin number.<a name="line.771"></a>
+<span class="sourceLineNo">772</span>     */<a name="line.772"></a>
+<span class="sourceLineNo">773</span>    public static native int wpiPinToGpio(int wpiPin);<a name="line.773"></a>
+<span class="sourceLineNo">774</span><a name="line.774"></a>
 <span class="sourceLineNo">775</span><a name="line.775"></a>
-<span class="sourceLineNo">776</span><a name="line.776"></a>
-<span class="sourceLineNo">777</span>    /**<a name="line.777"></a>
-<span class="sourceLineNo">778</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.778"></a>
-<span class="sourceLineNo">779</span>     *<a name="line.779"></a>
-<span class="sourceLineNo">780</span>     * &lt;p&gt; This returns the BCM_GPIO pin number of the supplied physical pin on the board header connector. &lt;/p&gt;<a name="line.780"></a>
-<span class="sourceLineNo">781</span>     *<a name="line.781"></a>
-<span class="sourceLineNo">782</span>     * @see &lt;a<a name="line.782"></a>
-<span class="sourceLineNo">783</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.783"></a>
-<span class="sourceLineNo">784</span>     * @return The return value represents the RaspberryPi GPIO (edge) pin number.<a name="line.784"></a>
-<span class="sourceLineNo">785</span>     *         A -1 will be returned for an invalid pin number.<a name="line.785"></a>
-<span class="sourceLineNo">786</span>     */<a name="line.786"></a>
-<span class="sourceLineNo">787</span>    public static native int physPinToGpio(int physPin);<a name="line.787"></a>
+<span class="sourceLineNo">776</span>    /**<a name="line.776"></a>
+<span class="sourceLineNo">777</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.777"></a>
+<span class="sourceLineNo">778</span>     *<a name="line.778"></a>
+<span class="sourceLineNo">779</span>     * &lt;p&gt; This returns the BCM_GPIO pin number of the supplied physical pin on the board header connector. &lt;/p&gt;<a name="line.779"></a>
+<span class="sourceLineNo">780</span>     *<a name="line.780"></a>
+<span class="sourceLineNo">781</span>     * @see &lt;a<a name="line.781"></a>
+<span class="sourceLineNo">782</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.782"></a>
+<span class="sourceLineNo">783</span>     * @return The return value represents the RaspberryPi GPIO (edge) pin number.<a name="line.783"></a>
+<span class="sourceLineNo">784</span>     *         A -1 will be returned for an invalid pin number.<a name="line.784"></a>
+<span class="sourceLineNo">785</span>     */<a name="line.785"></a>
+<span class="sourceLineNo">786</span>    public static native int physPinToGpio(int physPin);<a name="line.786"></a>
+<span class="sourceLineNo">787</span><a name="line.787"></a>
 <span class="sourceLineNo">788</span><a name="line.788"></a>
-<span class="sourceLineNo">789</span><a name="line.789"></a>
-<span class="sourceLineNo">790</span>    /**<a name="line.790"></a>
-<span class="sourceLineNo">791</span>     * &lt;p&gt; This writes the 8-bit byte supplied to the first 8 GPIO pins. It’s the fastest way to set all 8 bits at once to a particular value,<a name="line.791"></a>
-<span class="sourceLineNo">792</span>     *     although it still takes two write operations to the Pi’s GPIO hardware.  &lt;/p&gt;<a name="line.792"></a>
-<span class="sourceLineNo">793</span>     *<a name="line.793"></a>
-<span class="sourceLineNo">794</span>     * @see &lt;a<a name="line.794"></a>
-<span class="sourceLineNo">795</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.795"></a>
-<span class="sourceLineNo">796</span>     */<a name="line.796"></a>
-<span class="sourceLineNo">797</span>    public static native void digitalWriteByte(int value);<a name="line.797"></a>
+<span class="sourceLineNo">789</span>    /**<a name="line.789"></a>
+<span class="sourceLineNo">790</span>     * &lt;p&gt; This writes the 8-bit byte supplied to the first 8 GPIO pins. It’s the fastest way to set all 8 bits at once to a particular value,<a name="line.790"></a>
+<span class="sourceLineNo">791</span>     *     although it still takes two write operations to the Pi’s GPIO hardware.  &lt;/p&gt;<a name="line.791"></a>
+<span class="sourceLineNo">792</span>     *<a name="line.792"></a>
+<span class="sourceLineNo">793</span>     * @see &lt;a<a name="line.793"></a>
+<span class="sourceLineNo">794</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.794"></a>
+<span class="sourceLineNo">795</span>     */<a name="line.795"></a>
+<span class="sourceLineNo">796</span>    public static native void digitalWriteByte(int value);<a name="line.796"></a>
+<span class="sourceLineNo">797</span><a name="line.797"></a>
 <span class="sourceLineNo">798</span><a name="line.798"></a>
-<span class="sourceLineNo">799</span><a name="line.799"></a>
-<span class="sourceLineNo">800</span>    /**<a name="line.800"></a>
-<span class="sourceLineNo">801</span>     * &lt;p&gt;[PWM]&lt;/p&gt;<a name="line.801"></a>
-<span class="sourceLineNo">802</span>     *<a name="line.802"></a>
-<span class="sourceLineNo">803</span>     * &lt;p&gt; The PWM generator can run in 2 modes – balanced and mark:space. The mark:space mode is traditional, however<a name="line.803"></a>
-<span class="sourceLineNo">804</span>     *     the default mode in the Pi is balanced. You can switch modes by supplying the parameter: PWM_MODE_BAL or PWM_MODE_MS.&lt;/p&gt;<a name="line.804"></a>
-<span class="sourceLineNo">805</span>     *<a name="line.805"></a>
-<span class="sourceLineNo">806</span>     * @see &lt;a<a name="line.806"></a>
-<span class="sourceLineNo">807</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.807"></a>
-<span class="sourceLineNo">808</span>     */<a name="line.808"></a>
-<span class="sourceLineNo">809</span>    public static native void pwmSetMode(int mode);<a name="line.809"></a>
+<span class="sourceLineNo">799</span>    /**<a name="line.799"></a>
+<span class="sourceLineNo">800</span>     * &lt;p&gt;[PWM]&lt;/p&gt;<a name="line.800"></a>
+<span class="sourceLineNo">801</span>     *<a name="line.801"></a>
+<span class="sourceLineNo">802</span>     * &lt;p&gt; The PWM generator can run in 2 modes – balanced and mark:space. The mark:space mode is traditional, however<a name="line.802"></a>
+<span class="sourceLineNo">803</span>     *     the default mode in the Pi is balanced. You can switch modes by supplying the parameter: PWM_MODE_BAL or PWM_MODE_MS.&lt;/p&gt;<a name="line.803"></a>
+<span class="sourceLineNo">804</span>     *<a name="line.804"></a>
+<span class="sourceLineNo">805</span>     * @see &lt;a<a name="line.805"></a>
+<span class="sourceLineNo">806</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.806"></a>
+<span class="sourceLineNo">807</span>     */<a name="line.807"></a>
+<span class="sourceLineNo">808</span>    public static native void pwmSetMode(int mode);<a name="line.808"></a>
+<span class="sourceLineNo">809</span><a name="line.809"></a>
 <span class="sourceLineNo">810</span><a name="line.810"></a>
-<span class="sourceLineNo">811</span><a name="line.811"></a>
-<span class="sourceLineNo">812</span>    /**<a name="line.812"></a>
-<span class="sourceLineNo">813</span>     * &lt;p&gt;[PWM]&lt;/p&gt;<a name="line.813"></a>
-<span class="sourceLineNo">814</span>     *<a name="line.814"></a>
-<span class="sourceLineNo">815</span>     * &lt;p&gt; This sets the range register in the PWM generator. The default is 1024.&lt;/p&gt;<a name="line.815"></a>
-<span class="sourceLineNo">816</span>     *<a name="line.816"></a>
-<span class="sourceLineNo">817</span>     * @see &lt;a<a name="line.817"></a>
-<span class="sourceLineNo">818</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.818"></a>
-<span class="sourceLineNo">819</span>     */<a name="line.819"></a>
-<span class="sourceLineNo">820</span>    public static native void pwmSetRange(int range);<a name="line.820"></a>
+<span class="sourceLineNo">811</span>    /**<a name="line.811"></a>
+<span class="sourceLineNo">812</span>     * &lt;p&gt;[PWM]&lt;/p&gt;<a name="line.812"></a>
+<span class="sourceLineNo">813</span>     *<a name="line.813"></a>
+<span class="sourceLineNo">814</span>     * &lt;p&gt; This sets the range register in the PWM generator. The default is 1024.&lt;/p&gt;<a name="line.814"></a>
+<span class="sourceLineNo">815</span>     *<a name="line.815"></a>
+<span class="sourceLineNo">816</span>     * @see &lt;a<a name="line.816"></a>
+<span class="sourceLineNo">817</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.817"></a>
+<span class="sourceLineNo">818</span>     */<a name="line.818"></a>
+<span class="sourceLineNo">819</span>    public static native void pwmSetRange(int range);<a name="line.819"></a>
+<span class="sourceLineNo">820</span><a name="line.820"></a>
 <span class="sourceLineNo">821</span><a name="line.821"></a>
-<span class="sourceLineNo">822</span><a name="line.822"></a>
-<span class="sourceLineNo">823</span>    /**<a name="line.823"></a>
-<span class="sourceLineNo">824</span>     * &lt;p&gt;[PWM]&lt;/p&gt;<a name="line.824"></a>
-<span class="sourceLineNo">825</span>     *<a name="line.825"></a>
-<span class="sourceLineNo">826</span>     * &lt;p&gt; This sets the divisor for the PWM clock.&lt;/p&gt;<a name="line.826"></a>
-<span class="sourceLineNo">827</span>     *<a name="line.827"></a>
-<span class="sourceLineNo">828</span>     * @see &lt;a<a name="line.828"></a>
-<span class="sourceLineNo">829</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.829"></a>
-<span class="sourceLineNo">830</span>     */<a name="line.830"></a>
-<span class="sourceLineNo">831</span>    public static native void pwmSetClock(int divisor);<a name="line.831"></a>
+<span class="sourceLineNo">822</span>    /**<a name="line.822"></a>
+<span class="sourceLineNo">823</span>     * &lt;p&gt;[PWM]&lt;/p&gt;<a name="line.823"></a>
+<span class="sourceLineNo">824</span>     *<a name="line.824"></a>
+<span class="sourceLineNo">825</span>     * &lt;p&gt; This sets the divisor for the PWM clock.&lt;/p&gt;<a name="line.825"></a>
+<span class="sourceLineNo">826</span>     *<a name="line.826"></a>
+<span class="sourceLineNo">827</span>     * @see &lt;a<a name="line.827"></a>
+<span class="sourceLineNo">828</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.828"></a>
+<span class="sourceLineNo">829</span>     */<a name="line.829"></a>
+<span class="sourceLineNo">830</span>    public static native void pwmSetClock(int divisor);<a name="line.830"></a>
+<span class="sourceLineNo">831</span><a name="line.831"></a>
 <span class="sourceLineNo">832</span><a name="line.832"></a>
-<span class="sourceLineNo">833</span><a name="line.833"></a>
-<span class="sourceLineNo">834</span>    /**<a name="line.834"></a>
-<span class="sourceLineNo">835</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.835"></a>
-<span class="sourceLineNo">836</span>     *<a name="line.836"></a>
-<span class="sourceLineNo">837</span>     * &lt;p&gt; This sets the strength of the pad drivers for a particular group of pins. There are 3 groups of pins and the drive strength is from 0 to 7. Do not use this unless you know what you are doing. &lt;/p&gt;<a name="line.837"></a>
-<span class="sourceLineNo">838</span>     *<a name="line.838"></a>
-<span class="sourceLineNo">839</span>     * @see &lt;a<a name="line.839"></a>
-<span class="sourceLineNo">840</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.840"></a>
-<span class="sourceLineNo">841</span>     */<a name="line.841"></a>
-<span class="sourceLineNo">842</span>    public static native void setPadDrive(int group, int value);<a name="line.842"></a>
+<span class="sourceLineNo">833</span>    /**<a name="line.833"></a>
+<span class="sourceLineNo">834</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.834"></a>
+<span class="sourceLineNo">835</span>     *<a name="line.835"></a>
+<span class="sourceLineNo">836</span>     * &lt;p&gt; This sets the strength of the pad drivers for a particular group of pins. There are 3 groups of pins and the drive strength is from 0 to 7. Do not use this unless you know what you are doing. &lt;/p&gt;<a name="line.836"></a>
+<span class="sourceLineNo">837</span>     *<a name="line.837"></a>
+<span class="sourceLineNo">838</span>     * @see &lt;a<a name="line.838"></a>
+<span class="sourceLineNo">839</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.839"></a>
+<span class="sourceLineNo">840</span>     */<a name="line.840"></a>
+<span class="sourceLineNo">841</span>    public static native void setPadDrive(int group, int value);<a name="line.841"></a>
+<span class="sourceLineNo">842</span><a name="line.842"></a>
 <span class="sourceLineNo">843</span><a name="line.843"></a>
-<span class="sourceLineNo">844</span><a name="line.844"></a>
-<span class="sourceLineNo">845</span>    /**<a name="line.845"></a>
-<span class="sourceLineNo">846</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.846"></a>
-<span class="sourceLineNo">847</span>     *<a name="line.847"></a>
-<span class="sourceLineNo">848</span>     * &lt;p&gt; This gets the ALT function level of the requested pin number &lt;/p&gt;<a name="line.848"></a>
-<span class="sourceLineNo">849</span>     *<a name="line.849"></a>
-<span class="sourceLineNo">850</span>     * @see &lt;a<a name="line.850"></a>
-<span class="sourceLineNo">851</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.851"></a>
-<span class="sourceLineNo">852</span>     */<a name="line.852"></a>
-<span class="sourceLineNo">853</span>    public static native int getAlt(int pin);<a name="line.853"></a>
+<span class="sourceLineNo">844</span>    /**<a name="line.844"></a>
+<span class="sourceLineNo">845</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.845"></a>
+<span class="sourceLineNo">846</span>     *<a name="line.846"></a>
+<span class="sourceLineNo">847</span>     * &lt;p&gt; This gets the ALT function level of the requested pin number &lt;/p&gt;<a name="line.847"></a>
+<span class="sourceLineNo">848</span>     *<a name="line.848"></a>
+<span class="sourceLineNo">849</span>     * @see &lt;a<a name="line.849"></a>
+<span class="sourceLineNo">850</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.850"></a>
+<span class="sourceLineNo">851</span>     */<a name="line.851"></a>
+<span class="sourceLineNo">852</span>    public static native int getAlt(int pin);<a name="line.852"></a>
+<span class="sourceLineNo">853</span><a name="line.853"></a>
 <span class="sourceLineNo">854</span><a name="line.854"></a>
-<span class="sourceLineNo">855</span><a name="line.855"></a>
-<span class="sourceLineNo">856</span>    /**<a name="line.856"></a>
-<span class="sourceLineNo">857</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.857"></a>
-<span class="sourceLineNo">858</span>     *<a name="line.858"></a>
-<span class="sourceLineNo">859</span>     * &lt;p&gt; This sets the frequency of a GPIO pin &lt;/p&gt;<a name="line.859"></a>
-<span class="sourceLineNo">860</span>     *<a name="line.860"></a>
-<span class="sourceLineNo">861</span>     * @see &lt;a<a name="line.861"></a>
-<span class="sourceLineNo">862</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.862"></a>
-<span class="sourceLineNo">863</span>     */<a name="line.863"></a>
-<span class="sourceLineNo">864</span>    public static native void gpioClockSet(int pin, int frequency);<a name="line.864"></a>
-<span class="sourceLineNo">865</span>}<a name="line.865"></a>
+<span class="sourceLineNo">855</span>    /**<a name="line.855"></a>
+<span class="sourceLineNo">856</span>     * &lt;p&gt;[Hardware]&lt;/p&gt;<a name="line.856"></a>
+<span class="sourceLineNo">857</span>     *<a name="line.857"></a>
+<span class="sourceLineNo">858</span>     * &lt;p&gt; This sets the frequency of a GPIO pin &lt;/p&gt;<a name="line.858"></a>
+<span class="sourceLineNo">859</span>     *<a name="line.859"></a>
+<span class="sourceLineNo">860</span>     * @see &lt;a<a name="line.860"></a>
+<span class="sourceLineNo">861</span>     *      href="http://wiringpi.com/reference/raspberry-pi-specifics/"&gt;http://wiringpi.com/reference/raspberry-pi-specifics/&lt;/a&gt;<a name="line.861"></a>
+<span class="sourceLineNo">862</span>     */<a name="line.862"></a>
+<span class="sourceLineNo">863</span>    public static native void gpioClockSet(int pin, int frequency);<a name="line.863"></a>
+<span class="sourceLineNo">864</span>}<a name="line.864"></a>
 
 
 

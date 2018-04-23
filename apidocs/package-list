@@ -1,4 +1,5 @@
 com.pi4j.concurrent
+com.pi4j.io.file
 com.pi4j.io.gpio
 com.pi4j.io.gpio.event
 com.pi4j.io.gpio.exception

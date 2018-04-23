@@ -19,7 +19,7 @@
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
@@ -65,7 +65,7 @@
 <span class="sourceLineNo">057</span>                PinState state = ((PinDigitalStateChangeEvent) event).getState();<a name="line.57"></a>
 <span class="sourceLineNo">058</span><a name="line.58"></a>
 <span class="sourceLineNo">059</span>                // create a copy of the listeners collection<a name="line.59"></a>
-<span class="sourceLineNo">060</span>                Collection&lt;GpioPinListener&gt; listeners  = new ArrayList&lt;GpioPinListener&gt;(pin.getListeners());<a name="line.60"></a>
+<span class="sourceLineNo">060</span>                Collection&lt;GpioPinListener&gt; listeners  = new ArrayList&lt;&gt;(pin.getListeners());<a name="line.60"></a>
 <span class="sourceLineNo">061</span><a name="line.61"></a>
 <span class="sourceLineNo">062</span>                // process event callbacks for digital listeners<a name="line.62"></a>
 <span class="sourceLineNo">063</span>                for (GpioPinListener listener : listeners) {<a name="line.63"></a>
@@ -77,7 +77,7 @@
 <span class="sourceLineNo">069</span>                }<a name="line.69"></a>
 <span class="sourceLineNo">070</span><a name="line.70"></a>
 <span class="sourceLineNo">071</span>                // create a copy of the triggers collection<a name="line.71"></a>
-<span class="sourceLineNo">072</span>                Collection&lt;GpioTrigger&gt; triggers  = new ArrayList&lt;GpioTrigger&gt;(pin.getTriggers());<a name="line.72"></a>
+<span class="sourceLineNo">072</span>                Collection&lt;GpioTrigger&gt; triggers  = new ArrayList&lt;&gt;(pin.getTriggers());<a name="line.72"></a>
 <span class="sourceLineNo">073</span><a name="line.73"></a>
 <span class="sourceLineNo">074</span>                // process triggers<a name="line.74"></a>
 <span class="sourceLineNo">075</span>                for (GpioTrigger trigger : triggers) {<a name="line.75"></a>
@@ -89,7 +89,7 @@
 <span class="sourceLineNo">081</span>                double value = ((PinAnalogValueChangeEvent) event).getValue();<a name="line.81"></a>
 <span class="sourceLineNo">082</span><a name="line.82"></a>
 <span class="sourceLineNo">083</span>                // create a copy of the listeners collection<a name="line.83"></a>
-<span class="sourceLineNo">084</span>                Collection&lt;GpioPinListener&gt; listeners  = new ArrayList&lt;GpioPinListener&gt;(pin.getListeners());<a name="line.84"></a>
+<span class="sourceLineNo">084</span>                Collection&lt;GpioPinListener&gt; listeners  = new ArrayList&lt;&gt;(pin.getListeners());<a name="line.84"></a>
 <span class="sourceLineNo">085</span><a name="line.85"></a>
 <span class="sourceLineNo">086</span>                // process event callbacks for analog listeners<a name="line.86"></a>
 <span class="sourceLineNo">087</span>                for (GpioPinListener listener : listeners) {<a name="line.87"></a>

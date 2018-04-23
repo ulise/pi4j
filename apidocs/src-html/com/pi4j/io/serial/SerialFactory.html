@@ -19,7 +19,7 @@
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2016 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
@@ -83,64 +83,65 @@
 <span class="sourceLineNo">075</span>     * @return Return a new Serial implementation instance.<a name="line.75"></a>
 <span class="sourceLineNo">076</span>     */<a name="line.76"></a>
 <span class="sourceLineNo">077</span>    public static Serial createInstance() {<a name="line.77"></a>
-<span class="sourceLineNo">078</span>        return new SerialImpl();<a name="line.78"></a>
-<span class="sourceLineNo">079</span>    }<a name="line.79"></a>
-<span class="sourceLineNo">080</span><a name="line.80"></a>
-<span class="sourceLineNo">081</span>    /**<a name="line.81"></a>
-<span class="sourceLineNo">082</span>     * &lt;p&gt;Return instance of {@link ExecutorServiceFactory}.&lt;/p&gt;<a name="line.82"></a>
-<span class="sourceLineNo">083</span>     * &lt;p&gt;Note: .&lt;/p&gt;<a name="line.83"></a>
-<span class="sourceLineNo">084</span>     *<a name="line.84"></a>
-<span class="sourceLineNo">085</span>     * @return Return a new GpioController impl instance.<a name="line.85"></a>
-<span class="sourceLineNo">086</span>     */<a name="line.86"></a>
-<span class="sourceLineNo">087</span>    public static ExecutorServiceFactory getExecutorServiceFactory() {<a name="line.87"></a>
-<span class="sourceLineNo">088</span>        // if an executor service provider factory has not been created, then create a new default instance<a name="line.88"></a>
-<span class="sourceLineNo">089</span>        if (executorServiceFactory == null) {<a name="line.89"></a>
-<span class="sourceLineNo">090</span>            executorServiceFactory = new DefaultExecutorServiceFactory();<a name="line.90"></a>
-<span class="sourceLineNo">091</span>        }<a name="line.91"></a>
-<span class="sourceLineNo">092</span>        // return the provider instance<a name="line.92"></a>
-<span class="sourceLineNo">093</span>        return executorServiceFactory;<a name="line.93"></a>
-<span class="sourceLineNo">094</span>    }<a name="line.94"></a>
-<span class="sourceLineNo">095</span><a name="line.95"></a>
-<span class="sourceLineNo">096</span>    /**<a name="line.96"></a>
-<span class="sourceLineNo">097</span>     * Sets default {@link ExecutorServiceFactory}.<a name="line.97"></a>
-<span class="sourceLineNo">098</span>     *<a name="line.98"></a>
-<span class="sourceLineNo">099</span>     * @param executorServiceFactory service factory instance<a name="line.99"></a>
-<span class="sourceLineNo">100</span>     */<a name="line.100"></a>
-<span class="sourceLineNo">101</span>    public static void setExecutorServiceFactory(ExecutorServiceFactory executorServiceFactory) {<a name="line.101"></a>
-<span class="sourceLineNo">102</span>        // set the default factory instance<a name="line.102"></a>
-<span class="sourceLineNo">103</span>        SerialFactory.executorServiceFactory = executorServiceFactory;<a name="line.103"></a>
-<span class="sourceLineNo">104</span>    }<a name="line.104"></a>
-<span class="sourceLineNo">105</span><a name="line.105"></a>
-<span class="sourceLineNo">106</span>    /**<a name="line.106"></a>
-<span class="sourceLineNo">107</span>     * This method returns TRUE if the serial controller has been shutdown.<a name="line.107"></a>
-<span class="sourceLineNo">108</span>     *<a name="line.108"></a>
-<span class="sourceLineNo">109</span>     * @return shutdown state<a name="line.109"></a>
-<span class="sourceLineNo">110</span>     */<a name="line.110"></a>
-<span class="sourceLineNo">111</span>    public static boolean isShutdown(){<a name="line.111"></a>
-<span class="sourceLineNo">112</span>        return isshutdown;<a name="line.112"></a>
-<span class="sourceLineNo">113</span>    }<a name="line.113"></a>
-<span class="sourceLineNo">114</span><a name="line.114"></a>
+<span class="sourceLineNo">078</span>        isshutdown = false;<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        return new SerialImpl();<a name="line.79"></a>
+<span class="sourceLineNo">080</span>    }<a name="line.80"></a>
+<span class="sourceLineNo">081</span><a name="line.81"></a>
+<span class="sourceLineNo">082</span>    /**<a name="line.82"></a>
+<span class="sourceLineNo">083</span>     * &lt;p&gt;Return instance of {@link ExecutorServiceFactory}.&lt;/p&gt;<a name="line.83"></a>
+<span class="sourceLineNo">084</span>     * &lt;p&gt;Note: .&lt;/p&gt;<a name="line.84"></a>
+<span class="sourceLineNo">085</span>     *<a name="line.85"></a>
+<span class="sourceLineNo">086</span>     * @return Return a new GpioController impl instance.<a name="line.86"></a>
+<span class="sourceLineNo">087</span>     */<a name="line.87"></a>
+<span class="sourceLineNo">088</span>    public static ExecutorServiceFactory getExecutorServiceFactory() {<a name="line.88"></a>
+<span class="sourceLineNo">089</span>        // if an executor service provider factory has not been created, then create a new default instance<a name="line.89"></a>
+<span class="sourceLineNo">090</span>        if (executorServiceFactory == null) {<a name="line.90"></a>
+<span class="sourceLineNo">091</span>            executorServiceFactory = new DefaultExecutorServiceFactory();<a name="line.91"></a>
+<span class="sourceLineNo">092</span>        }<a name="line.92"></a>
+<span class="sourceLineNo">093</span>        // return the provider instance<a name="line.93"></a>
+<span class="sourceLineNo">094</span>        return executorServiceFactory;<a name="line.94"></a>
+<span class="sourceLineNo">095</span>    }<a name="line.95"></a>
+<span class="sourceLineNo">096</span><a name="line.96"></a>
+<span class="sourceLineNo">097</span>    /**<a name="line.97"></a>
+<span class="sourceLineNo">098</span>     * Sets default {@link ExecutorServiceFactory}.<a name="line.98"></a>
+<span class="sourceLineNo">099</span>     *<a name="line.99"></a>
+<span class="sourceLineNo">100</span>     * @param executorServiceFactory service factory instance<a name="line.100"></a>
+<span class="sourceLineNo">101</span>     */<a name="line.101"></a>
+<span class="sourceLineNo">102</span>    public static void setExecutorServiceFactory(ExecutorServiceFactory executorServiceFactory) {<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        // set the default factory instance<a name="line.103"></a>
+<span class="sourceLineNo">104</span>        SerialFactory.executorServiceFactory = executorServiceFactory;<a name="line.104"></a>
+<span class="sourceLineNo">105</span>    }<a name="line.105"></a>
+<span class="sourceLineNo">106</span><a name="line.106"></a>
+<span class="sourceLineNo">107</span>    /**<a name="line.107"></a>
+<span class="sourceLineNo">108</span>     * This method returns TRUE if the serial controller has been shutdown.<a name="line.108"></a>
+<span class="sourceLineNo">109</span>     *<a name="line.109"></a>
+<span class="sourceLineNo">110</span>     * @return shutdown state<a name="line.110"></a>
+<span class="sourceLineNo">111</span>     */<a name="line.111"></a>
+<span class="sourceLineNo">112</span>    public static boolean isShutdown(){<a name="line.112"></a>
+<span class="sourceLineNo">113</span>        return isshutdown;<a name="line.113"></a>
+<span class="sourceLineNo">114</span>    }<a name="line.114"></a>
 <span class="sourceLineNo">115</span><a name="line.115"></a>
-<span class="sourceLineNo">116</span>    /**<a name="line.116"></a>
-<span class="sourceLineNo">117</span>     * This method can be called to forcefully shutdown all serial port<a name="line.117"></a>
-<span class="sourceLineNo">118</span>     * monitoring, listening, and task threads/executors.<a name="line.118"></a>
-<span class="sourceLineNo">119</span>     */<a name="line.119"></a>
-<span class="sourceLineNo">120</span>    public static void shutdown()<a name="line.120"></a>
-<span class="sourceLineNo">121</span>    {<a name="line.121"></a>
-<span class="sourceLineNo">122</span>        // prevent reentrant invocation<a name="line.122"></a>
-<span class="sourceLineNo">123</span>        if(isShutdown())<a name="line.123"></a>
-<span class="sourceLineNo">124</span>            return;<a name="line.124"></a>
-<span class="sourceLineNo">125</span><a name="line.125"></a>
-<span class="sourceLineNo">126</span>        // shutdown all executor services<a name="line.126"></a>
-<span class="sourceLineNo">127</span>        //<a name="line.127"></a>
-<span class="sourceLineNo">128</span>        // NOTE: we are not permitted to access the shutdown() method of the individual<a name="line.128"></a>
-<span class="sourceLineNo">129</span>        // executor services, we must perform the shutdown with the factory<a name="line.129"></a>
-<span class="sourceLineNo">130</span>        SerialFactory.getExecutorServiceFactory().shutdown();<a name="line.130"></a>
-<span class="sourceLineNo">131</span><a name="line.131"></a>
-<span class="sourceLineNo">132</span>        // set is shutdown tracking variable<a name="line.132"></a>
-<span class="sourceLineNo">133</span>        isshutdown = true;<a name="line.133"></a>
-<span class="sourceLineNo">134</span>    }<a name="line.134"></a>
-<span class="sourceLineNo">135</span>}<a name="line.135"></a>
+<span class="sourceLineNo">116</span><a name="line.116"></a>
+<span class="sourceLineNo">117</span>    /**<a name="line.117"></a>
+<span class="sourceLineNo">118</span>     * This method can be called to forcefully shutdown all serial port<a name="line.118"></a>
+<span class="sourceLineNo">119</span>     * monitoring, listening, and task threads/executors.<a name="line.119"></a>
+<span class="sourceLineNo">120</span>     */<a name="line.120"></a>
+<span class="sourceLineNo">121</span>    public static void shutdown()<a name="line.121"></a>
+<span class="sourceLineNo">122</span>    {<a name="line.122"></a>
+<span class="sourceLineNo">123</span>        // prevent reentrant invocation<a name="line.123"></a>
+<span class="sourceLineNo">124</span>        if(isShutdown())<a name="line.124"></a>
+<span class="sourceLineNo">125</span>            return;<a name="line.125"></a>
+<span class="sourceLineNo">126</span><a name="line.126"></a>
+<span class="sourceLineNo">127</span>        // shutdown all executor services<a name="line.127"></a>
+<span class="sourceLineNo">128</span>        //<a name="line.128"></a>
+<span class="sourceLineNo">129</span>        // NOTE: we are not permitted to access the shutdown() method of the individual<a name="line.129"></a>
+<span class="sourceLineNo">130</span>        // executor services, we must perform the shutdown with the factory<a name="line.130"></a>
+<span class="sourceLineNo">131</span>        SerialFactory.getExecutorServiceFactory().shutdown();<a name="line.131"></a>
+<span class="sourceLineNo">132</span><a name="line.132"></a>
+<span class="sourceLineNo">133</span>        // set is shutdown tracking variable<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        isshutdown = true;<a name="line.134"></a>
+<span class="sourceLineNo">135</span>    }<a name="line.135"></a>
+<span class="sourceLineNo">136</span>}<a name="line.136"></a>
 
 
 
