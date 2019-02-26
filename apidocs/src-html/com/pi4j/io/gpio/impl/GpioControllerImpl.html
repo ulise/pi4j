@@ -19,7 +19,7 @@
 <span class="sourceLineNo">011</span> * this project can be found here:  http://www.pi4j.com/<a name="line.11"></a>
 <span class="sourceLineNo">012</span> * **********************************************************************<a name="line.12"></a>
 <span class="sourceLineNo">013</span> * %%<a name="line.13"></a>
-<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.14"></a>
+<span class="sourceLineNo">014</span> * Copyright (C) 2012 - 2019 Pi4J<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
 <span class="sourceLineNo">016</span> * This program is free software: you can redistribute it and/or modify<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * it under the terms of the GNU Lesser General Public License as<a name="line.17"></a>
@@ -85,7 +85,7 @@
 <span class="sourceLineNo">077</span>    @Override<a name="line.77"></a>
 <span class="sourceLineNo">078</span>    public GpioPin getProvisionedPin(Pin pin){<a name="line.78"></a>
 <span class="sourceLineNo">079</span>        for(GpioPin gpio_pin : pins){<a name="line.79"></a>
-<span class="sourceLineNo">080</span>            if(gpio_pin.getPin().equals(pin)){<a name="line.80"></a>
+<span class="sourceLineNo">080</span>            if (Objects.equals(gpio_pin.getPin(), pin)) {<a name="line.80"></a>
 <span class="sourceLineNo">081</span>                return gpio_pin;<a name="line.81"></a>
 <span class="sourceLineNo">082</span>            }<a name="line.82"></a>
 <span class="sourceLineNo">083</span>        }<a name="line.83"></a>
@@ -95,7 +95,7 @@
 <span class="sourceLineNo">087</span>    @Override<a name="line.87"></a>
 <span class="sourceLineNo">088</span>    public GpioPin getProvisionedPin(String name){<a name="line.88"></a>
 <span class="sourceLineNo">089</span>        for(GpioPin pin : pins){<a name="line.89"></a>
-<span class="sourceLineNo">090</span>            if(pin.getName().equals(name)){<a name="line.90"></a>
+<span class="sourceLineNo">090</span>            if (Objects.equals(pin.getName(), name)) {<a name="line.90"></a>
 <span class="sourceLineNo">091</span>                return pin;<a name="line.91"></a>
 <span class="sourceLineNo">092</span>            }<a name="line.92"></a>
 <span class="sourceLineNo">093</span>        }<a name="line.93"></a>
@@ -551,13 +551,13 @@
 <span class="sourceLineNo">543</span>    public GpioPin provisionPin(GpioProvider provider, Pin pin, String name, PinMode mode, PinState defaultState) {<a name="line.543"></a>
 <span class="sourceLineNo">544</span><a name="line.544"></a>
 <span class="sourceLineNo">545</span>        // if the provider does not match the pin's provider then throw an error<a name="line.545"></a>
-<span class="sourceLineNo">546</span>        if(!provider.getName().equals(pin.getProvider())){<a name="line.546"></a>
+<span class="sourceLineNo">546</span>        if (!Objects.equals(provider.getName(), pin.getProvider())) {<a name="line.546"></a>
 <span class="sourceLineNo">547</span>            throw new PinProviderException(provider, pin);<a name="line.547"></a>
 <span class="sourceLineNo">548</span>        }<a name="line.548"></a>
 <span class="sourceLineNo">549</span><a name="line.549"></a>
 <span class="sourceLineNo">550</span>        // if an existing pin has been previously created, then throw an error<a name="line.550"></a>
 <span class="sourceLineNo">551</span>        for(GpioPin p : pins) {<a name="line.551"></a>
-<span class="sourceLineNo">552</span>            if (p.getProvider().equals(provider) &amp;&amp; p.getPin().equals(pin)) {<a name="line.552"></a>
+<span class="sourceLineNo">552</span>            if (Objects.equals(p.getProvider(), provider) &amp;&amp; Objects.equals(p.getPin(), pin)) {<a name="line.552"></a>
 <span class="sourceLineNo">553</span>                throw new GpioPinExistsException(pin);<a name="line.553"></a>
 <span class="sourceLineNo">554</span>            }<a name="line.554"></a>
 <span class="sourceLineNo">555</span>        }<a name="line.555"></a>

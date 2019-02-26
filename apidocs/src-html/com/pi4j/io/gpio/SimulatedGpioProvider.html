@@ -21,7 +21,7 @@
 <span class="sourceLineNo">013</span> * this project can be found here:  http://www.pi4j.com/<a name="line.13"></a>
 <span class="sourceLineNo">014</span> * **********************************************************************<a name="line.14"></a>
 <span class="sourceLineNo">015</span> * %%<a name="line.15"></a>
-<span class="sourceLineNo">016</span> * Copyright (C) 2012 - 2018 Pi4J<a name="line.16"></a>
+<span class="sourceLineNo">016</span> * Copyright (C) 2012 - 2019 Pi4J<a name="line.16"></a>
 <span class="sourceLineNo">017</span> * %%<a name="line.17"></a>
 <span class="sourceLineNo">018</span> * This program is free software: you can redistribute it and/or modify<a name="line.18"></a>
 <span class="sourceLineNo">019</span> * it under the terms of the GNU Lesser General Public License as<a name="line.19"></a>
@@ -78,33 +78,34 @@
 <span class="sourceLineNo">070</span>        // If no specific platform is specified we default to simulating the raspberry pi<a name="line.70"></a>
 <span class="sourceLineNo">071</span>        if (config == null) {<a name="line.71"></a>
 <span class="sourceLineNo">072</span>            NAME = RaspiGpioProvider.NAME;<a name="line.72"></a>
-<span class="sourceLineNo">073</span>        }<a name="line.73"></a>
-<span class="sourceLineNo">074</span><a name="line.74"></a>
-<span class="sourceLineNo">075</span>        NAME = config;<a name="line.75"></a>
-<span class="sourceLineNo">076</span>    }<a name="line.76"></a>
-<span class="sourceLineNo">077</span><a name="line.77"></a>
-<span class="sourceLineNo">078</span>    @Override<a name="line.78"></a>
-<span class="sourceLineNo">079</span>    public String getName() {<a name="line.79"></a>
-<span class="sourceLineNo">080</span>        return NAME;<a name="line.80"></a>
-<span class="sourceLineNo">081</span>    }<a name="line.81"></a>
-<span class="sourceLineNo">082</span><a name="line.82"></a>
-<span class="sourceLineNo">083</span>    public void setState(Pin pin, PinState state) {<a name="line.83"></a>
-<span class="sourceLineNo">084</span>        // cache pin state<a name="line.84"></a>
-<span class="sourceLineNo">085</span>        getPinCache(pin).setState(state);<a name="line.85"></a>
-<span class="sourceLineNo">086</span><a name="line.86"></a>
-<span class="sourceLineNo">087</span>        // dispatch event<a name="line.87"></a>
-<span class="sourceLineNo">088</span>        dispatchPinDigitalStateChangeEvent(pin, state);<a name="line.88"></a>
-<span class="sourceLineNo">089</span>    }<a name="line.89"></a>
-<span class="sourceLineNo">090</span><a name="line.90"></a>
-<span class="sourceLineNo">091</span>    public void setAnalogValue(Pin pin, double value) {<a name="line.91"></a>
-<span class="sourceLineNo">092</span>        // cache pin state<a name="line.92"></a>
-<span class="sourceLineNo">093</span>        getPinCache(pin).setAnalogValue(value);<a name="line.93"></a>
-<span class="sourceLineNo">094</span><a name="line.94"></a>
-<span class="sourceLineNo">095</span>        // dispatch event<a name="line.95"></a>
-<span class="sourceLineNo">096</span>        dispatchPinAnalogValueChangeEvent(pin, value);<a name="line.96"></a>
-<span class="sourceLineNo">097</span>    }<a name="line.97"></a>
-<span class="sourceLineNo">098</span><a name="line.98"></a>
-<span class="sourceLineNo">099</span>}<a name="line.99"></a>
+<span class="sourceLineNo">073</span>            return;<a name="line.73"></a>
+<span class="sourceLineNo">074</span>        }<a name="line.74"></a>
+<span class="sourceLineNo">075</span><a name="line.75"></a>
+<span class="sourceLineNo">076</span>        NAME = config;<a name="line.76"></a>
+<span class="sourceLineNo">077</span>    }<a name="line.77"></a>
+<span class="sourceLineNo">078</span><a name="line.78"></a>
+<span class="sourceLineNo">079</span>    @Override<a name="line.79"></a>
+<span class="sourceLineNo">080</span>    public String getName() {<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        return NAME;<a name="line.81"></a>
+<span class="sourceLineNo">082</span>    }<a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span>    public void setState(Pin pin, PinState state) {<a name="line.84"></a>
+<span class="sourceLineNo">085</span>        // cache pin state<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        getPinCache(pin).setState(state);<a name="line.86"></a>
+<span class="sourceLineNo">087</span><a name="line.87"></a>
+<span class="sourceLineNo">088</span>        // dispatch event<a name="line.88"></a>
+<span class="sourceLineNo">089</span>        dispatchPinDigitalStateChangeEvent(pin, state);<a name="line.89"></a>
+<span class="sourceLineNo">090</span>    }<a name="line.90"></a>
+<span class="sourceLineNo">091</span><a name="line.91"></a>
+<span class="sourceLineNo">092</span>    public void setAnalogValue(Pin pin, double value) {<a name="line.92"></a>
+<span class="sourceLineNo">093</span>        // cache pin state<a name="line.93"></a>
+<span class="sourceLineNo">094</span>        getPinCache(pin).setAnalogValue(value);<a name="line.94"></a>
+<span class="sourceLineNo">095</span><a name="line.95"></a>
+<span class="sourceLineNo">096</span>        // dispatch event<a name="line.96"></a>
+<span class="sourceLineNo">097</span>        dispatchPinAnalogValueChangeEvent(pin, value);<a name="line.97"></a>
+<span class="sourceLineNo">098</span>    }<a name="line.98"></a>
+<span class="sourceLineNo">099</span><a name="line.99"></a>
+<span class="sourceLineNo">100</span>}<a name="line.100"></a>
 
 
 
