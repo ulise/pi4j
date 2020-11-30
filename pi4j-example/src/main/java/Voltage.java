@@ -35,6 +35,9 @@ import com.pi4j.io.gpio.GpioPinAnalogInput;
 import com.pi4j.io.gpio.event.GpioPinAnalogValueChangeEvent;
 import com.pi4j.io.gpio.event.GpioPinListenerAnalog;
 import com.pi4j.io.spi.SpiChannel;
+import org.apache.http.HttpVersion;
+import org.apache.http.client.fluent.Request;
+import org.apache.http.entity.ContentType;
 
 /**
  * <p>
@@ -68,14 +71,14 @@ public class Voltage {
         // Provision gpio analog input pins for all channels of the MCP3008.
         // (you don't have to define them all if you only use a subset in your project)
         final GpioPinAnalogInput inputs[] = {
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH0, "MyAnalogInput-CH0"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH1, "MyAnalogInput-CH1"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH2, "MyAnalogInput-CH2"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH3, "MyAnalogInput-CH3"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH4, "MyAnalogInput-CH4"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH5, "MyAnalogInput-CH5"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH6, "MyAnalogInput-CH6"),
-                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH7, "MyAnalogInput-CH7")
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH0, "CH0"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH1, "CH1"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH2, "CH2"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH3, "CH3"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH4, "CH4"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH5, "CH5"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH6, "CH6"),
+                gpio.provisionAnalogInputPin(provider, MCP3008Pin.CH7, "CH7")
         };
 
 
@@ -97,6 +100,10 @@ public class Voltage {
         // Print current analog input conversion values from each input channel
         for(GpioPinAnalogInput input : inputs){
             System.out.println("<INITIAL VALUE> [" + input.getName() + "] : RAW VALUE = " + String.format("%.2f", input.getValue() / 1023 * 16.5));
+            if(input.getName().equals("CH0"))
+            {
+                send("bat01", input.getValue() / 1023 * 16.5);
+            }
         }
 
         // Create an analog pin value change listener
@@ -107,9 +114,14 @@ public class Voltage {
             {
                 // get RAW value
                 double value = event.getValue();
+                String pin = event.getPin().getName();
 
                 // display output
-                System.out.println("<CHANGED VALUE> [" + event.getPin().getName() + "] : RAW VALUE = " + String.format("%.2f", value / 1023 * 16.5));
+                System.out.println("<CHANGED VALUE> [" + pin + "] : RAW VALUE = " + String.format("%.2f", value / 1023 * 16.5));
+                if(pin.equals("CH0"))
+                {
+                    send("bat01", value / 1023 * 16.5);
+                }
             }
         };
 
@@ -128,4 +140,16 @@ public class Voltage {
 
         System.out.println("Exiting Voltage");
     }
+    public static String send(String item, double value){
+        try{
+            return Request.Post("http://localhost:8080/rest/items/" + item)
+                    .useExpectContinue()
+                    .version(HttpVersion.HTTP_1_1)
+                    .bodyString(String.format("%.3f", value), ContentType.DEFAULT_TEXT)
+                    .execute().returnContent().asString();
+        }catch(Exception e){
+            return e.toString();
+        }
+    }
+
 }
